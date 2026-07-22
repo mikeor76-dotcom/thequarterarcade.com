@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert Coin — The Quarter Devlog 01</title>
+<style>
+  :root {
+    --ink: #141019; --panel: #1d1524; --line: #372a40;
+    --bone: #ece1c6; --dim: #a1927a; --gold: #f4b13e; --ember: #e05236;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--ink); color: var(--bone);
+         font-family: Georgia, 'Iowan Old Style', serif; min-height: 100vh;
+         padding: 2rem 1rem; line-height: 1.7; }
+  .wrap { max-width: 40rem; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 2.5rem; }
+  .kicker { font-family: ui-monospace, Menlo, monospace; font-size: .7rem; letter-spacing: .35em;
+            text-transform: uppercase; color: var(--dim); }
+  h1 { font-size: 2.4rem; letter-spacing: .04em; color: var(--gold); margin: .3rem 0; }
+  .date { font-family: ui-monospace, Menlo, monospace; font-size: .7rem; color: var(--dim);
+          letter-spacing: .2em; text-transform: uppercase; }
+  h2 { font-size: 1.25rem; color: var(--gold); margin: 2rem 0 .8rem; }
+  p { margin-bottom: 1.1rem; }
+  ul { margin: 0 0 1.1rem 1.4rem; }
+  li { margin-bottom: .5rem; }
+  strong { color: var(--gold); }
+  em { color: var(--bone); }
+  blockquote { border-left: 3px solid var(--ember); padding: .6rem 1rem; margin: 1.4rem 0;
+               background: var(--panel); font-style: italic; color: #ffd9c9; }
+  a { color: var(--gold); }
+  .nav { display: flex; justify-content: space-between; margin-top: 3rem;
+         font-family: ui-monospace, Menlo, monospace; font-size: .75rem;
+         letter-spacing: .2em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">The Quarter · Devlog 01</div>
+    <h1>Insert Coin</h1>
+    <div class="date">July 2026</div>
+  </header>
+
+  <p>I'm building an arcade from scratch. An empty building in a small town in
+  New England, town approvals, construction, the whole thing — about fourteen
+  months before the doors open.</p>
+
+  <p>This devlog is about what I'm doing while I wait.</p>
+
+  <p>The arcade will be called <strong>The Quarter</strong>. A real retro
+  arcade — cabinets, pinball, a floor full of machines. But it will have one
+  attraction that exists nowhere else: a custom multiplayer game, built for
+  this specific room, where every player in the building plays in the
+  <strong>same persistent world</strong>.</p>
+
+  <p><em>One world. Every table. Nothing resets.</em></p>
+
+  <h2>The pitch</h2>
+
+  <p>Every machine in every arcade forgets you the moment you walk away. This
+  one never forgets anything. There's a world a hundred levels deep, and the
+  whole community digs through it together over a season. Each player gets one
+  free run a day. Every run moves a shared progress meter — on a big wall in
+  the arcade, and online. When a level finally falls, everyone who chipped at
+  it owns a piece of that story, by name, in a permanent public ledger.</p>
+
+  <p>The world is built from the real folklore of the towns around the arcade.
+  I'm keeping the location vague until the paperwork is done — but if you're
+  from around here, you'll recognize things. That's a promise.</p>
+
+  <h2>Week one: prove the fun</h2>
+
+  <p>There's an old rule in game development: nothing matters if fifteen
+  minutes of play isn't fun. So before the persistent world, before the wall,
+  before any of it, I built the dumbest possible version of the combat — and
+  here's the part that would've sounded like science fiction five years ago:
+  I described the game, and an AI built it with me. Playable the same day.</p>
+
+  <p>It's all circles and rectangles on purpose (feel first, art later), but
+  by the end of the week the greybox had:</p>
+
+  <ul>
+    <li>Four-player drop-in co-op, Gauntlet-style, with skeletons pouring out
+        of bone pits</li>
+    <li>Two classes — a warrior and a wizard with a pointy hat, picked by
+        which button you join with</li>
+    <li>Two enemy types, including a fast little horror that forces you to
+        stop tunnel-visioning</li>
+    <li>A floor you can't trust: some bone piles are décor, some get up when
+        you walk past, and you cannot tell which</li>
+    <li>A boss (crown, two telegraphed attacks, zero respect for you)</li>
+    <li>Sound effects synthesized entirely from code — no audio files
+        exist</li>
+    <li>A narrator who records your deaths and is not impressed</li>
+  </ul>
+
+  <p>And then the part that makes it an <em>arcade attraction</em> instead of
+  just a game: the run reports itself to a server, the server writes it into
+  a permanent ledger, and <a href="../">a webpage updates in seconds</a> —
+  level one, meter climbing, the run recorded under the player's name.
+  Forever. That pipeline is the spine of everything this project will
+  become.</p>
+
+  <p>The first line ever written into the world's history:</p>
+
+  <blockquote>Season 1 begins. The Mouth is open. The Understair waits.</blockquote>
+
+  <h2>Next</h2>
+
+  <p>Four controllers are in the mail. Next episode, real humans play it for
+  the first time — a test with a name (the Fun Gate) and a real chance of
+  failing. That's what makes it worth writing down.</p>
+
+  <p>Follow along. It's going to take a while. That's the good part.</p>
+
+  <div class="nav">
+    <a href="index.html">← All entries</a>
+    <a href="../">The World Ledger</a>
+  </div>
+</div>
+</body>
+</html>
