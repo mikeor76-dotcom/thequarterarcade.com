@@ -1,0 +1,85 @@
+{
+	"generated_at": "2026-07-22T17:29:36",
+	"recent": [
+		{
+			"actor": {
+				"player": "SECONDCREW"
+			},
+			"data": {
+				"contribution": 2.7,
+				"crew_size": 1,
+				"deaths": 0,
+				"kills": 7,
+				"level_time": 3.86966155555559,
+				"meter_after": 5.4,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784755776_1243",
+			"media": null,
+			"prominence": "entry",
+			"season": 1,
+			"site": "understair.L1",
+			"text": "SECONDCREW's company came back up from Level 1 with 7 kills. The meter climbs to 5%.",
+			"ts": "2026-07-22T17:29:36",
+			"type": "run.completed",
+			"unix": 1784755776,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "SMOKETEST"
+			},
+			"data": {
+				"contribution": 2.7,
+				"crew_size": 1.0,
+				"deaths": 0.0,
+				"kills": 7.0,
+				"level_time": 3.87612144444448,
+				"meter_after": 2.7,
+				"victory": false
+			},
+			"day": 1.0,
+			"id": "evt_1784755742_8299",
+			"media": null,
+			"prominence": "entry",
+			"season": 1.0,
+			"site": "understair.L1",
+			"text": "SMOKETEST's company came back up from Level 1 with 7 kills. The meter climbs to 2%.",
+			"ts": "2026-07-22T17:29:02",
+			"type": "run.completed",
+			"unix": 1784755742.0,
+			"v": 1.0,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "THE CHRONICLER"
+			},
+			"data": {
+				"season": 1.0
+			},
+			"day": 1.0,
+			"id": "evt_1784755732_1486",
+			"media": null,
+			"prominence": "proclamation",
+			"season": 1.0,
+			"site": "the-quarter",
+			"text": "Season 1 begins. The Mouth is open. The Understair waits.",
+			"ts": "2026-07-22T17:28:52",
+			"type": "season.started",
+			"unix": 1784755732.0,
+			"v": 1.0,
+			"vod": null
+		}
+	],
+	"state": {
+		"frontier_level": 1.0,
+		"meter": 5.4,
+		"season": 1.0,
+		"season_start_unix": 1784755732.0,
+		"total_kills": 14,
+		"total_runs": 2
+	}
+}
