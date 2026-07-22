@@ -1,0 +1,131 @@
+/* The Quarter — shared site styles. One brand: ink, bone, gold, ember. */
+
+:root {
+  --ink: #141019; --panel: #1d1524; --line: #372a40;
+  --bone: #ece1c6; --dim: #a1927a; --gold: #f4b13e; --ember: #e05236;
+  --teal: #4fd1c5;
+  --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--ink); color: var(--bone); font-family: var(--serif);
+  min-height: 100vh; line-height: 1.7; padding: 0 1rem 2rem;
+}
+a { color: var(--gold); }
+.wrap { max-width: 44rem; margin: 0 auto; }
+
+/* --- Nav --- */
+.nav {
+  max-width: 44rem; margin: 0 auto; padding: 1.1rem 0 0.9rem;
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--line);
+  margin-bottom: 2.2rem;
+}
+.nav .brand {
+  font-family: var(--serif); font-weight: 700; letter-spacing: .06em;
+  color: var(--gold); text-decoration: none; font-size: 1.05rem;
+}
+.nav .links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.nav .links a {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim); text-decoration: none;
+}
+.nav .links a:hover, .nav .links a.here { color: var(--gold); }
+
+/* --- Type --- */
+.kicker {
+  font-family: var(--mono); font-size: .7rem; letter-spacing: .35em;
+  text-transform: uppercase; color: var(--dim);
+}
+h1 { font-size: 2.4rem; letter-spacing: .04em; color: var(--gold); margin: .3rem 0; }
+h2 {
+  font-size: 1rem; letter-spacing: .25em; text-transform: uppercase;
+  color: var(--dim); margin: 2.2rem 0 .9rem; font-family: var(--mono);
+  font-weight: 400;
+}
+.sub { color: var(--dim); font-style: italic; }
+.center { text-align: center; }
+
+/* --- Prose (devlog & explainer pages) --- */
+.prose p { margin-bottom: 1.1rem; }
+.prose ul { margin: 0 0 1.1rem 1.4rem; }
+.prose li { margin-bottom: .5rem; }
+.prose strong { color: var(--gold); }
+.prose em { color: var(--bone); }
+.prose h2 { font-family: var(--serif); font-size: 1.25rem; color: var(--gold);
+            letter-spacing: 0; text-transform: none; margin: 2rem 0 .8rem; }
+blockquote {
+  border-left: 3px solid var(--ember); padding: .6rem 1rem; margin: 1.4rem 0;
+  background: var(--panel); font-style: italic; color: #ffd9c9;
+}
+
+/* --- Cards & buttons --- */
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  padding: 1.2rem 1.4rem; margin-bottom: 1rem;
+}
+a.card { display: block; text-decoration: none; color: var(--bone); }
+a.card:hover { border-color: var(--gold); }
+.card h3 { font-size: 1.15rem; color: var(--gold); margin-bottom: .3rem; }
+.card .date, .card .tag {
+  font-family: var(--mono); font-size: .68rem; color: var(--dim);
+  letter-spacing: .15em; text-transform: uppercase;
+}
+.card p { margin-top: .5rem; color: var(--dim); font-size: .95rem; }
+.btn {
+  display: inline-block; font-family: var(--mono); font-size: .72rem;
+  letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+  color: var(--ink); background: var(--gold); padding: .65rem 1.1rem;
+  border-radius: 4px;
+}
+.btn.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.cta-row { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; margin-top: 1.4rem; }
+
+/* --- World page --- */
+.level-card { background: var(--panel); border: 1px solid var(--line);
+              border-radius: 6px; padding: 1.5rem; text-align: center;
+              margin-bottom: 1.5rem; }
+.level-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .3em;
+               text-transform: uppercase; color: var(--dim); }
+.level-num { font-size: 4.5rem; font-weight: 700; color: var(--bone); line-height: 1.1; }
+.meter { height: 22px; background: #0d0913; border: 1px solid var(--line);
+         border-radius: 4px; overflow: hidden; margin: 1rem 0 .4rem; }
+.meter-fill { height: 100%; background: linear-gradient(90deg, var(--ember), var(--gold));
+              width: 0%; transition: width .8s ease; }
+.meter-text { font-family: var(--mono); font-size: .85rem; color: var(--dim); }
+.totals { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;
+          font-family: var(--mono); font-size: .8rem; color: var(--dim); }
+.totals b { color: var(--bone); font-size: 1.1rem; display: block; text-align: center; }
+.ledger { display: flex; flex-direction: column; gap: .5rem; }
+.entry { background: var(--panel); border: 1px solid var(--line);
+         border-left: 3px solid var(--line); border-radius: 4px;
+         padding: .7rem .9rem; font-size: .95rem; }
+.entry .meta { font-family: var(--mono); font-size: .68rem; color: var(--dim); margin-top: .3rem; }
+.entry.notable { border-left-color: var(--teal); }
+.entry.proclamation { border-left-color: var(--ember); background: #241318; color: #ffd9c9; }
+.entry.proclamation::before { content: "◈ PROCLAMATION — "; font-family: var(--mono);
+                              font-size: .7rem; letter-spacing: .15em; color: var(--ember); }
+.shot { margin-top: .5rem; }
+.shot img { max-width: 100%; border-radius: 4px; border: 1px solid var(--line); }
+.offline { text-align: center; color: var(--ember); font-family: var(--mono);
+           font-size: .8rem; padding: 2rem; display: none; }
+
+/* --- Live strip (homepage) --- */
+.live-strip {
+  display: none; justify-content: center; gap: .6rem; align-items: baseline;
+  font-family: var(--mono); font-size: .78rem; color: var(--dim);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  padding: .7rem 1rem; text-decoration: none; flex-wrap: wrap;
+}
+.live-strip b { color: var(--gold); }
+.live-strip .dot { width: 8px; height: 8px; border-radius: 50%;
+                   background: var(--ember); box-shadow: 0 0 8px var(--ember);
+                   align-self: center; }
+
+footer {
+  text-align: center; color: var(--dim); font-family: var(--mono);
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+  margin-top: 3rem; line-height: 2;
+}
+footer a { color: var(--dim); }

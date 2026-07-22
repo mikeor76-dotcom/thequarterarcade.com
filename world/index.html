@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The World — The Quarter</title>
+<meta name="description" content="The live state of The Quarter's shared world: the current frontier level, the community meter, and the Ledger of every deed.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="nav">
+  <a href="/" class="brand">THE QUARTER</a>
+  <div class="links">
+    <a href="/game/">The Game</a>
+    <a href="/world/" class="here">The World</a>
+    <a href="/devlog/">Devlog</a>
+    <a href="/visit/">Visit</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="center" style="margin-bottom: 1.5rem;">
+    <div class="kicker">The Living World</div>
+    <h1>THE UNDERSTAIR</h1>
+    <div class="sub" id="season">—</div>
+  </header>
+
+  <div class="prose" style="margin-bottom: 1.5rem;">
+    <p class="sub" style="text-align: center;">This is the world's live state —
+    every run played moves what you see here. Right now it's the
+    <strong>development world</strong>, running on the workbench while the
+    game is built (<a href="/game/">what is this?</a>). The real Season 1
+    begins when the arcade opens.</p>
+  </div>
+
+  <div class="level-card">
+    <div class="level-label">Current Frontier</div>
+    <div class="level-num" id="level">—</div>
+    <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+    <div class="meter-text" id="meterText">meter —</div>
+    <div class="totals">
+      <div><b id="runs">—</b>runs this season</div>
+      <div><b id="kills">—</b>skeletons re-killed</div>
+    </div>
+  </div>
+
+  <div class="offline" id="offline">— the world is quiet · no ledger data yet —</div>
+
+  <h2>The Ledger</h2>
+  <div class="ledger" id="ledger"></div>
+
+  <footer>
+    The Chronicler records all · refreshed live ·
+    <a href="/devlog/">devlog</a>
+  </footer>
+</div>
+
+<script>
+  async function refresh() {
+    try {
+      const r = await fetch('/data/world.json', {cache: 'no-store'});
+      if (!r.ok) throw new Error(r.status);
+      const w = await r.json();
+      document.getElementById('offline').style.display = 'none';
+      const s = w.state;
+      document.getElementById('season').textContent =
+        'Season ' + s.season + ' · updated ' + w.generated_at;
+      document.getElementById('level').textContent = 'LEVEL ' + s.frontier_level;
+      document.getElementById('meterFill').style.width = Math.min(s.meter, 100) + '%';
+      document.getElementById('meterText').textContent = 'meter ' + s.meter.toFixed(1) + '%';
+      document.getElementById('runs').textContent = s.total_runs;
+      document.getElementById('kills').textContent = s.total_kills;
+      const ledger = document.getElementById('ledger');
+      ledger.innerHTML = '';
+      for (const e of (w.recent || [])) {
+        const div = document.createElement('div');
+        div.className = 'entry ' + (e.prominence || 'entry');
+        const text = document.createElement('div');
+        text.textContent = e.text;
+        div.appendChild(text);
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = 'day ' + e.day + ' · ' + e.ts + ' · ' + e.type + ' · ' + e.id;
+        div.appendChild(meta);
+        if (e.media && e.media.shot) {
+          const shot = document.createElement('div');
+          shot.className = 'shot';
+          const img = document.createElement('img');
+          img.src = '/data/shots/' + e.media.shot;
+          img.alt = 'run screenshot';
+          img.onerror = () => shot.remove();
+          shot.appendChild(img);
+          div.appendChild(shot);
+        }
+        ledger.appendChild(div);
+      }
+    } catch (err) {
+      document.getElementById('offline').style.display = 'block';
+    }
+  }
+  refresh();
+  setInterval(refresh, 2000);
+</script>
+</body>
+</html>

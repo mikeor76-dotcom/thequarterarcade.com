@@ -3,130 +3,89 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Quarter — The Understair</title>
-<style>
-  :root {
-    --ink: #141019; --panel: #1d1524; --line: #372a40;
-    --bone: #ece1c6; --dim: #a1927a; --gold: #f4b13e; --ember: #e05236; --teal: #4fd1c5;
-  }
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    background: var(--ink); color: var(--bone);
-    font-family: Georgia, 'Iowan Old Style', serif;
-    min-height: 100vh; padding: 2rem 1rem;
-  }
-  .wrap { max-width: 46rem; margin: 0 auto; }
-  header { text-align: center; margin-bottom: 2rem; }
-  .kicker { font-family: ui-monospace, Menlo, monospace; font-size: .7rem; letter-spacing: .35em;
-            text-transform: uppercase; color: var(--dim); }
-  h1 { font-size: 2.4rem; letter-spacing: .04em; color: var(--gold); margin: .3rem 0; }
-  .season { color: var(--dim); font-style: italic; }
-
-  .level-card { background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
-                padding: 1.5rem; text-align: center; margin-bottom: 1.5rem; }
-  .level-label { font-family: ui-monospace, Menlo, monospace; font-size: .7rem; letter-spacing: .3em;
-                 text-transform: uppercase; color: var(--dim); }
-  .level-num { font-size: 4.5rem; font-weight: 700; color: var(--bone); line-height: 1.1; }
-  .meter { height: 22px; background: #0d0913; border: 1px solid var(--line); border-radius: 4px;
-           overflow: hidden; margin: 1rem 0 .4rem; }
-  .meter-fill { height: 100%; background: linear-gradient(90deg, var(--ember), var(--gold));
-                width: 0%; transition: width .8s ease; }
-  .meter-text { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; color: var(--dim); }
-  .totals { display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;
-            font-family: ui-monospace, Menlo, monospace; font-size: .8rem; color: var(--dim); }
-  .totals b { color: var(--bone); font-size: 1.1rem; display: block; text-align: center; }
-
-  h2 { font-size: 1rem; letter-spacing: .25em; text-transform: uppercase; color: var(--dim);
-       margin: 1.5rem 0 .8rem; font-family: ui-monospace, Menlo, monospace; font-weight: 400; }
-  .ledger { display: flex; flex-direction: column; gap: .5rem; }
-  .entry { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--line);
-           border-radius: 4px; padding: .7rem .9rem; font-size: .95rem; }
-  .entry .meta { font-family: ui-monospace, Menlo, monospace; font-size: .68rem; color: var(--dim);
-                 margin-top: .3rem; }
-  .entry.notable { border-left-color: var(--teal); }
-  .entry.proclamation { border-left-color: var(--ember); background: #241318; color: #ffd9c9; }
-  .entry.proclamation::before { content: "◈ PROCLAMATION — "; font-family: ui-monospace, Menlo, monospace;
-                                font-size: .7rem; letter-spacing: .15em; color: var(--ember); }
-  .shot { margin-top: .5rem; }
-  .shot img { max-width: 100%; border-radius: 4px; border: 1px solid var(--line); }
-  .offline { text-align: center; color: var(--ember); font-family: ui-monospace, Menlo, monospace;
-             font-size: .8rem; padding: 2rem; display: none; }
-  footer { text-align: center; color: var(--dim); font-family: ui-monospace, Menlo, monospace;
-           font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; margin-top: 2.5rem; }
-</style>
+<title>The Quarter — a retro arcade, and a world that never resets</title>
+<meta name="description" content="A retro arcade being built from scratch in a small New England town — with one attraction no other arcade has: a persistent shared world every table plays together.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<nav class="nav">
+  <a href="/" class="brand">THE QUARTER</a>
+  <div class="links">
+    <a href="/game/">The Game</a>
+    <a href="/world/">The World</a>
+    <a href="/devlog/">Devlog</a>
+    <a href="/visit/">Visit</a>
+  </div>
+</nav>
+
 <div class="wrap">
-  <header>
+  <header class="center" style="margin: 2.5rem 0 2rem;">
     <div class="kicker">One World · Every Table · Nothing Resets</div>
-    <h1>THE QUARTER</h1>
-    <div class="season" id="season">—</div>
+    <h1 style="font-size: clamp(2.6rem, 8vw, 3.6rem);">THE QUARTER</h1>
+    <p class="sub" style="max-width: 32rem; margin: .6rem auto 0;">
+      A retro arcade, built from scratch in a small New England town —
+      and inside it, a world that never resets.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="/devlog/">Follow the build</a>
+      <a class="btn ghost" href="/world/">Peek at the world</a>
+    </div>
   </header>
 
-  <div class="level-card">
-    <div class="level-label">The Understair — Current Frontier</div>
-    <div class="level-num" id="level">—</div>
-    <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
-    <div class="meter-text" id="meterText">meter —</div>
-    <div class="totals">
-      <div><b id="runs">—</b>runs this season</div>
-      <div><b id="kills">—</b>skeletons re-killed</div>
-    </div>
+  <a class="live-strip" id="liveStrip" href="/world/">
+    <span class="dot"></span>
+    <span>THE UNDERSTAIR</span>
+    <b id="lsLevel">—</b>
+    <span id="lsMeter">—</span>
+    <span id="lsRuns">—</span>
+  </a>
+
+  <h2>The Arcade</h2>
+  <div class="prose">
+    <p>The Quarter is a real arcade — cabinets, pinball, a floor full of the
+    machines you remember. There is no building yet: we're starting from an
+    empty lot, town approvals and foundation and framing and all, with doors
+    planned for <strong>2027</strong>. The location gets announced the day
+    the paperwork clears.</p>
   </div>
 
-  <div class="offline" id="offline">— the world is quiet · no ledger data yet —</div>
+  <h2>The One Thing No Other Arcade Has</h2>
+  <div class="prose">
+    <p>Every machine in every arcade forgets you the moment you walk away.
+    Our flagship game never forgets anything. One shared fantasy world, a
+    hundred levels deep, that every table in the building digs through
+    <em>together</em> — one free run per person per day, every run moving a
+    meter the whole room can see, every deed recorded by name in a permanent
+    public ledger. When a level falls, it falls for everyone, forever.</p>
+  </div>
+  <div class="cta-row" style="justify-content: flex-start;">
+    <a class="btn ghost" href="/game/">How the game works</a>
+  </div>
 
-  <h2>The Ledger</h2>
-  <div class="ledger" id="ledger"></div>
+  <h2>Latest from the Devlog</h2>
+  <a class="card" href="/devlog/insert-coin.html">
+    <div class="date">Devlog 01 · July 2026</div>
+    <h3>Insert Coin</h3>
+    <p>An arcade with no building yet, a game that can only exist inside it,
+       and week one: proving the fun before anything else.</p>
+  </a>
 
-  <footer>The Chronicler records all · refreshed live · <a href="devlog/" style="color: var(--gold); text-decoration: none;">DEVLOG</a></footer>
+  <footer>
+    The Quarter · a small town in New England · opening 2027<br>
+    <a href="/game/">game</a> · <a href="/world/">world</a> ·
+    <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a>
+  </footer>
 </div>
 
 <script>
-  async function refresh() {
-    try {
-      const r = await fetch('data/world.json', {cache: 'no-store'});
-      if (!r.ok) throw new Error(r.status);
-      const w = await r.json();
-      document.getElementById('offline').style.display = 'none';
-      const s = w.state;
-      document.getElementById('season').textContent =
-        'Season ' + s.season + ' · updated ' + w.generated_at;
-      document.getElementById('level').textContent = 'LEVEL ' + s.frontier_level;
-      document.getElementById('meterFill').style.width = Math.min(s.meter, 100) + '%';
-      document.getElementById('meterText').textContent = 'meter ' + s.meter.toFixed(1) + '%';
-      document.getElementById('runs').textContent = s.total_runs;
-      document.getElementById('kills').textContent = s.total_kills;
-      const ledger = document.getElementById('ledger');
-      ledger.innerHTML = '';
-      for (const e of (w.recent || [])) {
-        const div = document.createElement('div');
-        div.className = 'entry ' + (e.prominence || 'entry');
-        const text = document.createElement('div');
-        text.textContent = e.text;
-        div.appendChild(text);
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-        meta.textContent = 'day ' + e.day + ' · ' + e.ts + ' · ' + e.type + ' · ' + e.id;
-        div.appendChild(meta);
-        if (e.media && e.media.shot) {
-          const shot = document.createElement('div');
-          shot.className = 'shot';
-          const img = document.createElement('img');
-          img.src = 'data/shots/' + e.media.shot;
-          img.alt = 'run screenshot';
-          img.onerror = () => shot.remove();
-          shot.appendChild(img);
-          div.appendChild(shot);
-        }
-        ledger.appendChild(div);
-      }
-    } catch (err) {
-      document.getElementById('offline').style.display = 'block';
-    }
-  }
-  refresh();
-  setInterval(refresh, 2000);
+  // Live strip: show the world's pulse if a snapshot exists.
+  fetch('/data/world.json', {cache: 'no-store'}).then(r => r.json()).then(w => {
+    document.getElementById('lsLevel').textContent = 'LEVEL ' + w.state.frontier_level;
+    document.getElementById('lsMeter').textContent = 'meter ' + w.state.meter.toFixed(1) + '%';
+    document.getElementById('lsRuns').textContent = w.state.total_runs + ' runs this season';
+    document.getElementById('liveStrip').style.display = 'flex';
+  }).catch(() => {});
 </script>
 </body>
 </html>
