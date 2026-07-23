@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-23T17:28:26",
+	"generated_at": "2026-07-23T17:46:09",
 	"notables": [
 		{
 			"actor": {
@@ -103,6 +103,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.1,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 1,
+				"level_time": 27.3353386666664,
+				"meter_after": 85.7,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784843169_6300",
+			"media": {
+				"shot": "shot_1784843168.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 1 kills. The meter climbs to 85%.",
+			"ts": "2026-07-23T17:46:09",
+			"type": "run.completed",
+			"unix": 1784843169,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -641,43 +670,17 @@
 			"unix": 1784806624.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "NOTABLETEST"
-			},
-			"data": {
-				"contribution": 2.7,
-				"crew_size": 1.0,
-				"deaths": 0.0,
-				"kills": 7.0,
-				"level_time": 3.85250000000004,
-				"meter_after": 14.2,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784806135_6351",
-			"media": null,
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-01",
-			"text": "NOTABLETEST's company returns from Chapter 1 with 7 kills. The meter climbs to 14%.",
-			"ts": "2026-07-23T07:28:55",
-			"type": "run.completed",
-			"unix": 1784806135.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 64.6,
-		"day_runs": 16,
+		"day_meter_gain": 66.7,
+		"day_runs": 17,
 		"last_day": 1,
-		"meter": 83.6,
+		"meter": 85.7,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 156,
-		"total_runs": 24
+		"total_kills": 157,
+		"total_runs": 25
 	}
 }
