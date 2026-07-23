@@ -1,6 +1,35 @@
 {
-	"generated_at": "2026-07-23T15:20:44",
+	"generated_at": "2026-07-23T15:43:48",
 	"notables": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 13.6,
+				"crew_size": 1,
+				"deaths": 0,
+				"kills": 16,
+				"level_time": 202.575913999945,
+				"meter_after": 73.5,
+				"victory": true
+			},
+			"day": 1,
+			"id": "evt_1784835828_4284",
+			"media": {
+				"shot": "shot_1784835828.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 73%.",
+			"ts": "2026-07-23T15:43:48",
+			"type": "run.completed",
+			"unix": 1784835828,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -74,6 +103,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 13.6,
+				"crew_size": 1,
+				"deaths": 0,
+				"kills": 16,
+				"level_time": 202.575913999945,
+				"meter_after": 73.5,
+				"victory": true
+			},
+			"day": 1,
+			"id": "evt_1784835828_4284",
+			"media": {
+				"shot": "shot_1784835828.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 73%.",
+			"ts": "2026-07-23T15:43:48",
+			"type": "run.completed",
+			"unix": 1784835828,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -600,38 +658,17 @@
 			"unix": 1784768417.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "THE CHRONICLER"
-			},
-			"data": {
-				"chapters_total": 25.0,
-				"season": 1.0
-			},
-			"day": 1.0,
-			"id": "evt_1784768401_4932",
-			"media": null,
-			"prominence": "proclamation",
-			"season": 1.0,
-			"site": "the-quarter",
-			"text": "Season 1 begins. Twenty-five chapters lie unwritten. The Chronicler sharpens his pen.",
-			"ts": "2026-07-22T21:00:01",
-			"type": "season.started",
-			"unix": 1784768401.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 40.9,
-		"day_runs": 10,
+		"day_meter_gain": 54.5,
+		"day_runs": 11,
 		"last_day": 1,
-		"meter": 59.9,
+		"meter": 73.5,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 139,
-		"total_runs": 18
+		"total_kills": 155,
+		"total_runs": 19
 	}
 }
