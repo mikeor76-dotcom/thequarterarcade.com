@@ -1,30 +1,163 @@
 {
-	"generated_at": "2026-07-23T06:14:38",
+	"generated_at": "2026-07-23T07:28:55",
+	"notables": [
+		{
+			"actor": {
+				"player": "THE CHRONICLER"
+			},
+			"data": {
+				"chapters_total": 25.0,
+				"season": 1.0
+			},
+			"day": 1.0,
+			"id": "evt_1784768401_4932",
+			"media": null,
+			"prominence": "proclamation",
+			"season": 1.0,
+			"site": "the-quarter",
+			"text": "Season 1 begins. Twenty-five chapters lie unwritten. The Chronicler sharpens his pen.",
+			"ts": "2026-07-22T21:00:01",
+			"type": "season.started",
+			"unix": 1784768401.0,
+			"v": 1.0,
+			"vod": null
+		}
+	],
 	"recent": [
 		{
 			"actor": {
-				"player": "RECAPTEST"
+				"player": "NOTABLETEST"
 			},
 			"data": {
 				"contribution": 2.7,
 				"crew_size": 1,
 				"deaths": 0,
 				"kills": 7,
-				"level_time": 3.85000000000003,
-				"meter_after": 5.4,
+				"level_time": 3.85250000000004,
+				"meter_after": 14.2,
 				"victory": false
 			},
 			"day": 1,
-			"id": "evt_1784801678_8391",
+			"id": "evt_1784806135_6351",
 			"media": null,
 			"prominence": "entry",
 			"season": 1,
 			"site": "chapter-01",
+			"text": "NOTABLETEST's company returns from Chapter 1 with 7 kills. The meter climbs to 14%.",
+			"ts": "2026-07-23T07:28:55",
+			"type": "run.completed",
+			"unix": 1784806135,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"contribution": 2.0,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 0.0,
+				"level_time": 113.629613999995,
+				"meter_after": 11.5,
+				"victory": false
+			},
+			"day": 1.0,
+			"id": "evt_1784806116_0010",
+			"media": {
+				"shot": "shot_1784806116.png"
+			},
+			"prominence": "entry",
+			"season": 1.0,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 0 kills. The meter climbs to 11%.",
+			"ts": "2026-07-23T07:28:36",
+			"type": "run.completed",
+			"unix": 1784806116.0,
+			"v": 1.0,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"contribution": 2.0,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 0.0,
+				"level_time": 26.5499999999998,
+				"meter_after": 9.5,
+				"victory": false
+			},
+			"day": 1.0,
+			"id": "evt_1784805993_9237",
+			"media": {
+				"shot": "shot_1784805993.png"
+			},
+			"prominence": "entry",
+			"season": 1.0,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 0 kills. The meter climbs to 9%.",
+			"ts": "2026-07-23T07:26:33",
+			"type": "run.completed",
+			"unix": 1784805993.0,
+			"v": 1.0,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"contribution": 2.1,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 1.0,
+				"level_time": 28.6829696666676,
+				"meter_after": 7.5,
+				"victory": false
+			},
+			"day": 1.0,
+			"id": "evt_1784805965_2787",
+			"media": {
+				"shot": "shot_1784805965.png"
+			},
+			"prominence": "entry",
+			"season": 1.0,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 1 kills. The meter climbs to 7%.",
+			"ts": "2026-07-23T07:26:05",
+			"type": "run.completed",
+			"unix": 1784805965.0,
+			"v": 1.0,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "RECAPTEST"
+			},
+			"data": {
+				"contribution": 2.7,
+				"crew_size": 1.0,
+				"deaths": 0.0,
+				"kills": 7.0,
+				"level_time": 3.85000000000003,
+				"meter_after": 5.4,
+				"victory": false
+			},
+			"day": 1.0,
+			"id": "evt_1784801678_8391",
+			"media": null,
+			"prominence": "entry",
+			"season": 1.0,
+			"site": "chapter-01",
 			"text": "RECAPTEST's company returns from Chapter 1 with 7 kills. The meter climbs to 5%.",
 			"ts": "2026-07-23T06:14:38",
 			"type": "run.completed",
-			"unix": 1784801678,
-			"v": 1,
+			"unix": 1784801678.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -77,10 +210,10 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"meter": 5.4,
+		"meter": 14.2,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 14,
-		"total_runs": 2
+		"total_kills": 22,
+		"total_runs": 6
 	}
 }
