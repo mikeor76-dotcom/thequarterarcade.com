@@ -114,7 +114,17 @@ a.entry-card:hover { border-color: var(--green); color: inherit; }
 .ledger .entry.notable { border-left-color: var(--cyan); }
 .ledger .entry.proclamation { border-left-color: var(--red); }
 .ledger .entry.proclamation .x { color: #ffb9a8; }
-.shot img { max-width: 100%; border: 3px solid var(--line); margin-top: 8px; }
+.shot img { max-width: 100%; border: 3px solid var(--line); margin-top: 8px; cursor: zoom-in; }
+
+/* Lightbox: click a shot, see the whole thing. */
+.lightbox { position: fixed; inset: 0; z-index: 200; display: none;
+  align-items: center; justify-content: center; background: rgba(7,7,15,0.92);
+  cursor: zoom-out; padding: 24px; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 96vw; max-height: 92vh; border: 3px solid var(--line); }
+.lightbox .hint { position: absolute; bottom: 14px; left: 0; right: 0;
+  text-align: center; font-family: var(--pixel); font-size: 9px;
+  letter-spacing: .2em; color: var(--dim); }
 
 /* Ticker */
 .ticker-band { border-top: 3px solid var(--line); overflow: hidden; background: var(--bg);

@@ -76,6 +76,11 @@
   </div>
 </section>
 
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="run screenshot, full size">
+  <div class="hint">click anywhere or press ESC to close</div>
+</div>
+
 <footer class="site">
   <span>The Chronicler records all · refreshed live</span>
   <span class="sep">|</span>
@@ -127,6 +132,10 @@
           const img = document.createElement('img');
           img.src = '/data/shots/' + e.media.shot; img.alt = 'run screenshot';
           img.onerror = () => shot.remove();
+          img.addEventListener('click', () => {
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightbox').classList.add('open');
+          });
           shot.appendChild(img); x.appendChild(shot);
         }
         led.appendChild(div);
@@ -137,6 +146,11 @@
   }
   refresh();
   setInterval(refresh, 2000);
+  const lb = document.getElementById('lightbox');
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') lb.classList.remove('open');
+  });
 </script>
 </body>
 </html>

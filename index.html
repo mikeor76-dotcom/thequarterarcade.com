@@ -220,9 +220,11 @@
       segs.appendChild(d);
     }
 
-    // Ledger (latest 4).
+    // Ledger (latest 4): stories first, routine only as filler.
     const led = document.getElementById('homeLedger');
-    const recent = (w.recent || []).slice(0, 4);
+    const notables = (w.notables || []);
+    const fill = (w.recent || []).filter(e => !notables.some(n => n.id === e.id));
+    const recent = notables.concat(fill).slice(0, 4);
     if (recent.length) {
       led.innerHTML = '';
       for (const e of recent) {
