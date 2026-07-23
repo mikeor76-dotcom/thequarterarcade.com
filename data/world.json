@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-23T16:04:26",
+	"generated_at": "2026-07-23T16:08:53",
 	"notables": [
 		{
 			"actor": {
@@ -103,6 +103,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.0,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 0,
+				"level_time": 36.0203436666659,
+				"meter_after": 77.5,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784837333_6210",
+			"media": {
+				"shot": "shot_1784837333.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 0 kills. The meter climbs to 77%.",
+			"ts": "2026-07-23T16:08:53",
+			"type": "run.completed",
+			"unix": 1784837333,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -635,43 +664,17 @@
 			"unix": 1784805965.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "RECAPTEST"
-			},
-			"data": {
-				"contribution": 2.7,
-				"crew_size": 1.0,
-				"deaths": 0.0,
-				"kills": 7.0,
-				"level_time": 3.85000000000003,
-				"meter_after": 5.4,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784801678_8391",
-			"media": null,
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-01",
-			"text": "RECAPTEST's company returns from Chapter 1 with 7 kills. The meter climbs to 5%.",
-			"ts": "2026-07-23T06:14:38",
-			"type": "run.completed",
-			"unix": 1784801678.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 56.5,
-		"day_runs": 12,
+		"day_meter_gain": 58.5,
+		"day_runs": 13,
 		"last_day": 1,
-		"meter": 75.5,
+		"meter": 77.5,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
 		"total_kills": 155,
-		"total_runs": 20
+		"total_runs": 21
 	}
 }
