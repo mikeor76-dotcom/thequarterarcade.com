@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-23T18:05:46",
+	"generated_at": "2026-07-23T18:16:39",
 	"notables": [
 		{
 			"actor": {
@@ -103,6 +103,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.9,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 9,
+				"level_time": 36.5985596666679,
+				"meter_after": 92.6,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784844999_7567",
+			"media": {
+				"shot": "shot_1784844998.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 9 kills. The meter climbs to 92%.",
+			"ts": "2026-07-23T18:16:39",
+			"type": "run.completed",
+			"unix": 1784844999,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -645,44 +674,17 @@
 			"unix": 1784817884.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "FEEDTEST"
-			},
-			"data": {
-				"boss_hp_pct": -1.0,
-				"contribution": 2.7,
-				"crew_size": 1.0,
-				"deaths": 0.0,
-				"kills": 7.0,
-				"level_time": 3.85595300000002,
-				"meter_after": 21.7,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784808220_2141",
-			"media": null,
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-01",
-			"text": "FEEDTEST's company returns from Chapter 1 with 7 kills. The meter climbs to 21%.",
-			"ts": "2026-07-23T08:03:40",
-			"type": "run.completed",
-			"unix": 1784808220.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 70.7,
-		"day_runs": 19,
+		"day_meter_gain": 73.6,
+		"day_runs": 20,
 		"last_day": 1,
-		"meter": 89.7,
+		"meter": 92.6,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 157,
-		"total_runs": 27
+		"total_kills": 166,
+		"total_runs": 28
 	}
 }
