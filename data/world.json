@@ -1,6 +1,27 @@
 {
-	"generated_at": "2026-07-23T11:01:32",
+	"generated_at": "2026-07-23T11:53:58",
 	"notables": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"chapter": 1,
+				"meter": 51.8
+			},
+			"day": 1,
+			"id": "evt_1784822038_5366",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "Chapter 1 is half written.",
+			"ts": "2026-07-23T11:53:58",
+			"type": "chapter.milestone",
+			"unix": 1784822038,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -53,6 +74,56 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"chapter": 1,
+				"meter": 51.8
+			},
+			"day": 1,
+			"id": "evt_1784822038_5366",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "Chapter 1 is half written.",
+			"ts": "2026-07-23T11:53:58",
+			"type": "chapter.milestone",
+			"unix": 1784822038,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.1,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 1,
+				"level_time": 53.6546916666687,
+				"meter_after": 51.8,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784822038_1240",
+			"media": {
+				"shot": "shot_1784822038.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 1 kills. The meter climbs to 51%.",
+			"ts": "2026-07-23T11:53:58",
+			"type": "run.completed",
+			"unix": 1784822038,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -467,13 +538,13 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 30.7,
-		"day_runs": 6,
+		"day_meter_gain": 32.8,
+		"day_runs": 7,
 		"last_day": 1,
-		"meter": 49.7,
+		"meter": 51.8,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 117,
-		"total_runs": 14
+		"total_kills": 118,
+		"total_runs": 15
 	}
 }
