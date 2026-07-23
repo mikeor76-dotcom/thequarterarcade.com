@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-23T08:03:40",
+	"generated_at": "2026-07-23T10:44:44",
 	"notables": [
 		{
 			"actor": {
@@ -24,6 +24,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.7,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 7,
+				"level_time": 94.3659959999959,
+				"meter_after": 24.4,
+				"victory": false
+			},
+			"day": 1,
+			"id": "evt_1784817884_8039",
+			"media": {
+				"shot": "shot_1784817884.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company returns from Chapter 1 with 7 kills. The meter climbs to 24%.",
+			"ts": "2026-07-23T10:44:44",
+			"type": "run.completed",
+			"unix": 1784817884,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "FEEDTEST"
@@ -293,13 +322,13 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 2.7,
-		"day_runs": 1,
+		"day_meter_gain": 5.4,
+		"day_runs": 2,
 		"last_day": 1,
-		"meter": 21.7,
+		"meter": 24.4,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 37,
-		"total_runs": 9
+		"total_kills": 44,
+		"total_runs": 10
 	}
 }
