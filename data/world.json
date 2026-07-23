@@ -1,25 +1,25 @@
 {
-	"generated_at": "2026-07-23T11:53:58",
+	"generated_at": "2026-07-23T13:40:45",
 	"notables": [
 		{
 			"actor": {
 				"player": "MIKE"
 			},
 			"data": {
-				"chapter": 1,
+				"chapter": 1.0,
 				"meter": 51.8
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784822038_5366",
 			"media": null,
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "Chapter 1 is half written.",
 			"ts": "2026-07-23T11:53:58",
 			"type": "chapter.milestone",
-			"unix": 1784822038,
-			"v": 1,
+			"unix": 1784822038.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -27,28 +27,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 13.2,
-				"crew_size": 1,
-				"deaths": 0,
-				"kills": 12,
+				"crew_size": 1.0,
+				"deaths": 0.0,
+				"kills": 12.0,
 				"level_time": 256.411070333225,
 				"meter_after": 37.6,
 				"victory": true
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784818145_0770",
 			"media": {
 				"shot": "shot_1784818145.png"
 			},
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 37%.",
 			"ts": "2026-07-23T10:49:05",
 			"type": "run.completed",
-			"unix": 1784818145,
-			"v": 1,
+			"unix": 1784818145.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -79,19 +79,27 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"chapter": 1,
-				"meter": 51.8
+				"boss_hp_pct": -1,
+				"contribution": 3.6,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 16,
+				"level_time": 91.8951276666703,
+				"meter_after": 55.4,
+				"victory": false
 			},
 			"day": 1,
-			"id": "evt_1784822038_5366",
-			"media": null,
-			"prominence": "notable",
+			"id": "evt_1784828445_7658",
+			"media": {
+				"shot": "shot_1784828445.png"
+			},
+			"prominence": "entry",
 			"season": 1,
 			"site": "chapter-01",
-			"text": "Chapter 1 is half written.",
-			"ts": "2026-07-23T11:53:58",
-			"type": "chapter.milestone",
-			"unix": 1784822038,
+			"text": "MIKE's company returns from Chapter 1 with 16 kills. The meter climbs to 55%.",
+			"ts": "2026-07-23T13:40:45",
+			"type": "run.completed",
+			"unix": 1784828445,
 			"v": 1,
 			"vod": null
 		},
@@ -100,28 +108,49 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"chapter": 1.0,
+				"meter": 51.8
+			},
+			"day": 1.0,
+			"id": "evt_1784822038_5366",
+			"media": null,
+			"prominence": "notable",
+			"season": 1.0,
+			"site": "chapter-01",
+			"text": "Chapter 1 is half written.",
+			"ts": "2026-07-23T11:53:58",
+			"type": "chapter.milestone",
+			"unix": 1784822038.0,
+			"v": 1.0,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1.0,
 				"contribution": 2.1,
-				"crew_size": 1,
-				"deaths": 1,
-				"kills": 1,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 1.0,
 				"level_time": 53.6546916666687,
 				"meter_after": 51.8,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784822038_1240",
 			"media": {
 				"shot": "shot_1784822038.png"
 			},
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company returns from Chapter 1 with 1 kills. The meter climbs to 51%.",
 			"ts": "2026-07-23T11:53:58",
 			"type": "run.completed",
-			"unix": 1784822038,
-			"v": 1,
+			"unix": 1784822038.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -129,28 +158,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": 87,
+				"boss_hp_pct": 87.0,
 				"contribution": 2.0,
-				"crew_size": 1,
-				"deaths": 1,
-				"kills": 0,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 0.0,
 				"level_time": 47.0642556666653,
 				"meter_after": 49.7,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784818892_4496",
 			"media": {
 				"shot": "shot_1784818892.png"
 			},
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company returns from Chapter 1 with 0 kills. The meter climbs to 49%.",
 			"ts": "2026-07-23T11:01:32",
 			"type": "run.completed",
-			"unix": 1784818892,
-			"v": 1,
+			"unix": 1784818892.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -158,28 +187,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 3.9,
-				"crew_size": 1,
-				"deaths": 1,
-				"kills": 19,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 19.0,
 				"level_time": 57.0513888888869,
 				"meter_after": 47.7,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784818839_7599",
 			"media": {
 				"shot": "shot_1784818839.png"
 			},
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company returns from Chapter 1 with 19 kills. The meter climbs to 47%.",
 			"ts": "2026-07-23T11:00:39",
 			"type": "run.completed",
-			"unix": 1784818839,
-			"v": 1,
+			"unix": 1784818839.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -187,28 +216,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 6.2,
-				"crew_size": 1,
-				"deaths": 1,
-				"kills": 42,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 42.0,
 				"level_time": 81.9503946666633,
 				"meter_after": 43.8,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784818592_6299",
 			"media": {
 				"shot": "shot_1784818592.png"
 			},
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company returns from Chapter 1 with 42 kills. The meter climbs to 43%.",
 			"ts": "2026-07-23T10:56:32",
 			"type": "run.completed",
-			"unix": 1784818592,
-			"v": 1,
+			"unix": 1784818592.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -216,28 +245,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 13.2,
-				"crew_size": 1,
-				"deaths": 0,
-				"kills": 12,
+				"crew_size": 1.0,
+				"deaths": 0.0,
+				"kills": 12.0,
 				"level_time": 256.411070333225,
 				"meter_after": 37.6,
 				"victory": true
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784818145_0770",
 			"media": {
 				"shot": "shot_1784818145.png"
 			},
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 37%.",
 			"ts": "2026-07-23T10:49:05",
 			"type": "run.completed",
-			"unix": 1784818145,
-			"v": 1,
+			"unix": 1784818145.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -245,28 +274,28 @@
 				"player": "MIKE"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 2.7,
-				"crew_size": 1,
-				"deaths": 1,
-				"kills": 7,
+				"crew_size": 1.0,
+				"deaths": 1.0,
+				"kills": 7.0,
 				"level_time": 94.3659959999959,
 				"meter_after": 24.4,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784817884_8039",
 			"media": {
 				"shot": "shot_1784817884.png"
 			},
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company returns from Chapter 1 with 7 kills. The meter climbs to 24%.",
 			"ts": "2026-07-23T10:44:44",
 			"type": "run.completed",
-			"unix": 1784817884,
-			"v": 1,
+			"unix": 1784817884.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -274,26 +303,26 @@
 				"player": "FEEDTEST"
 			},
 			"data": {
-				"boss_hp_pct": -1,
+				"boss_hp_pct": -1.0,
 				"contribution": 2.7,
-				"crew_size": 1,
-				"deaths": 0,
-				"kills": 7,
+				"crew_size": 1.0,
+				"deaths": 0.0,
+				"kills": 7.0,
 				"level_time": 3.85595300000002,
 				"meter_after": 21.7,
 				"victory": false
 			},
-			"day": 1,
+			"day": 1.0,
 			"id": "evt_1784808220_2141",
 			"media": null,
 			"prominence": "entry",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "FEEDTEST's company returns from Chapter 1 with 7 kills. The meter climbs to 21%.",
 			"ts": "2026-07-23T08:03:40",
 			"type": "run.completed",
-			"unix": 1784808220,
-			"v": 1,
+			"unix": 1784808220.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -538,13 +567,13 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 32.8,
-		"day_runs": 7,
+		"day_meter_gain": 36.4,
+		"day_runs": 8,
 		"last_day": 1,
-		"meter": 51.8,
+		"meter": 55.4,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 118,
-		"total_runs": 15
+		"total_kills": 134,
+		"total_runs": 16
 	}
 }
