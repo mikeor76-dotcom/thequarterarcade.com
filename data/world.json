@@ -1,6 +1,35 @@
 {
-	"generated_at": "2026-07-23T10:44:44",
+	"generated_at": "2026-07-23T10:49:05",
 	"notables": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 13.2,
+				"crew_size": 1,
+				"deaths": 0,
+				"kills": 12,
+				"level_time": 256.411070333225,
+				"meter_after": 37.6,
+				"victory": true
+			},
+			"day": 1,
+			"id": "evt_1784818145_0770",
+			"media": {
+				"shot": "shot_1784818145.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 37%.",
+			"ts": "2026-07-23T10:49:05",
+			"type": "run.completed",
+			"unix": 1784818145,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "THE CHRONICLER"
@@ -24,6 +53,35 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 13.2,
+				"crew_size": 1,
+				"deaths": 0,
+				"kills": 12,
+				"level_time": 256.411070333225,
+				"meter_after": 37.6,
+				"victory": true
+			},
+			"day": 1,
+			"id": "evt_1784818145_0770",
+			"media": {
+				"shot": "shot_1784818145.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 37%.",
+			"ts": "2026-07-23T10:49:05",
+			"type": "run.completed",
+			"unix": 1784818145,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -322,13 +380,13 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 5.4,
-		"day_runs": 2,
+		"day_meter_gain": 18.6,
+		"day_runs": 3,
 		"last_day": 1,
-		"meter": 24.4,
+		"meter": 37.6,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 44,
-		"total_runs": 10
+		"total_kills": 56,
+		"total_runs": 11
 	}
 }
