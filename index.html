@@ -6,85 +6,261 @@
 <title>The Quarter — a retro arcade, and a world that never resets</title>
 <meta name="description" content="A retro arcade being built from scratch in a small New England town — home of a persistent shared world that every table plays together.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap">
-  <header class="center" style="margin: 2.5rem 0 2rem;">
-    <div class="kicker">One World · Every Table · Nothing Resets</div>
-    <h1 style="font-size: clamp(2.6rem, 8vw, 3.6rem);">THE QUARTER</h1>
-    <p class="sub" style="max-width: 32rem; margin: .6rem auto 0;">
-      A retro arcade, built from scratch in a small New England town —
-      and inside it, a world that never resets.
-    </p>
-    <div class="cta-row">
-      <a class="btn" href="/devlog/">Follow the build</a>
-      <a class="btn ghost" href="/world/">Peek at the world</a>
+<!-- HERO -->
+<header class="section" style="text-align: center; padding-top: 88px; padding-bottom: 72px;">
+  <div class="badge" style="margin-bottom: 36px;">ONE WORLD &nbsp;·&nbsp; EVERY TABLE &nbsp;·&nbsp; NOTHING RESETS</div>
+  <h1 class="pixel-title" style="margin-bottom: 28px;">THE<br>QUARTER</h1>
+  <p class="lede" style="max-width: 620px; margin: 0 auto 44px; font-size: 27px;">A retro arcade,
+  built from scratch in a small New England town — and inside it, a world that never resets.</p>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a class="btn" href="/world/">▶ WATCH THE LIVE WORLD</a>
+    <a class="btn ghost" href="/devlog/">FOLLOW THE BUILD</a>
+  </div>
+  <div class="press-start" style="margin-top: 56px;">▼ PRESS START ▼</div>
+</header>
+
+<!-- LIVE WORLD BAND -->
+<section class="band" style="position: relative; z-index: 5; border-top: 3px solid var(--line); border-bottom: 3px solid var(--line); background: var(--panel); padding: 56px 32px 0;">
+  <div class="max">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 40px; flex-wrap: wrap;">
+      <span class="live-dot"></span>
+      <span class="pixel" style="font-size: 12px; color: #ff6b6b;">LIVE</span>
+      <span class="pixel" style="font-size: 16px; color: #f2f2ff;">THE UNDERSTAIR</span>
+      <span id="worldTag" style="font-size: 20px; color: var(--dim); margin-left: auto;">development world</span>
     </div>
-  </header>
 
-  <a class="live-strip" id="liveStrip" href="/world/">
-    <span class="dot"></span>
-    <span>THE UNDERSTAIR</span>
-    <b id="lsLevel">—</b>
-    <span id="lsMeter">—</span>
-    <span id="lsRuns">—</span>
-  </a>
+    <div class="grid-2" style="padding-bottom: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <div style="display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <div style="font-size: 21px; color: var(--dim); letter-spacing: 2px;">CURRENT FRONTIER</div>
+            <div class="frontier-num" id="lvNum">LV --</div>
+          </div>
+          <div style="font-size: 24px; color: var(--body);">of 100<br><span style="color: var(--dim); font-size: 20px;">the town digs together</span></div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 20px; color: var(--dim); margin-bottom: 8px; flex-wrap: wrap;">
+            <span id="meterLabel">LEVEL METER</span><span style="color: var(--green);" id="meterPct">--% — every run moves it</span>
+          </div>
+          <div class="seg-track" id="segs"></div>
+        </div>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <div><div class="stat-num" id="statRuns">—</div><div class="stat-label">runs this season</div></div>
+          <div><div class="stat-num" id="statKills">—</div><div class="stat-label">skeletons re-killed</div></div>
+          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label">levels fallen forever</div></div>
+        </div>
+      </div>
 
-  <h2>The Arcade</h2>
-  <div class="prose">
-    <p>The Quarter is a real arcade — cabinets, pinball, a floor full of the
-    machines you remember. There is no building yet: we're starting from an
-    empty lot, town approvals and foundation and framing and all, with doors
-    planned for <strong>2027</strong>. The location gets announced the day
-    the paperwork clears.</p>
+      <div class="panel deep" style="padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+          <span class="pixel" style="font-size: 12px; color: var(--amber);">THE LEDGER</span>
+          <span style="font-size: 18px; color: var(--dim);">the Chronicler records all</span>
+        </div>
+        <div class="ledger" id="homeLedger">
+          <div class="entry"><span class="x hint">— the world is quiet · no ledger data yet —</span></div>
+        </div>
+        <div style="margin-top: 16px; font-size: 20px;"><a href="/world/">full ledger →</a></div>
+      </div>
+    </div>
   </div>
 
-  <h2>A World That Never Resets</h2>
-  <div class="prose">
-    <p>Most arcade games forget you the moment you walk away. We're building
-    one that never forgets anything. One shared fantasy world, a
-    hundred levels deep, that every table in the building digs through
-    <em>together</em> — one free run per person per day, every run moving a
-    meter the whole room can see, every deed recorded by name in a permanent
-    public ledger. When a level falls, it falls for everyone, forever.</p>
+  <div class="ticker-band" id="tickerBand" style="display: none; margin: 0 -32px;">
+    <div class="ticker-run" id="tickerRun"></div>
   </div>
-  <div class="cta-row" style="justify-content: flex-start;">
-    <a class="btn ghost" href="/game/">How the game works</a>
+</section>
+
+<!-- UNDERSTAIR CUTAWAY / GAME -->
+<section class="section">
+  <div class="max grid-cutaway">
+    <div class="cutaway">
+      <div class="skyline">
+        <div style="width: 44px; height: 46px; background: #191930;"></div>
+        <div style="width: 58px; height: 64px; background: #14142a;"></div>
+        <div style="position: relative; width: 96px; height: 78px; background: #1e1e3a; display: flex; justify-content: center;">
+          <div class="sky-sign">THE QUARTER</div>
+        </div>
+        <div style="width: 50px; height: 54px; background: #191930;"></div>
+        <div style="width: 38px; height: 40px; background: #14142a;"></div>
+        <div style="flex: 1; height: 30px; background: #10101f;"></div>
+        <svg width="40" height="40" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" style="position: absolute; top: 12px; right: 20px;"><rect x="6" y="1" width="3" height="3" fill="#c9c9e8"/><rect x="5" y="2" width="1" height="1" fill="#c9c9e8"/></svg>
+      </div>
+      <div id="cutawayRows"></div>
+      <div class="unlit-tail">▓▓▓▓▓▓▓▓▓▓▓▓<br><span id="unlitCount">the rest, unlit</span><br>▓▓▓▓▓▓▓▓▓▓▓▓</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="kicker pink">THE FLAGSHIP GAME</div>
+      <h2 class="px" style="margin: 0 0 18px;">A WORLD THAT NEVER RESETS</h2>
+      <p class="lede" style="margin-bottom: 30px;">Most arcade games forget you the moment you
+      walk away. We're building one that never forgets anything. One shared world beneath the
+      town, a hundred levels deep, that every table digs through
+      <em style="color: var(--green); font-style: normal;">together</em>. When a level falls,
+      it falls for everyone, forever.</p>
+      <div class="grid-features">
+        <div class="feature"><div class="fh">① ONE RUN A DAY</div><div>One free run per person. That's the whole price — and everyone is watching.</div></div>
+        <div class="feature"><div class="fh">② A SHARED DESCENT</div><div>Every run moves the meter. The number on the wall is the town's number.</div></div>
+        <div class="feature"><div class="fh">③ THE LEDGER</div><div>Every deed recorded by name, forever. Glory and comedic death alike.</div></div>
+        <div class="feature"><div class="fh">④ SEASONS</div><div>Every few months the world ends — climactically — and reforges. Glory carries forward.</div></div>
+      </div>
+      <div class="tone-box" style="margin-top: 30px;">
+        <svg width="52" height="52" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="6" height="1" fill="#e8e8f4"/><rect x="2" y="1" width="8" height="4" fill="#e8e8f4"/><rect x="3" y="5" width="6" height="1" fill="#e8e8f4"/><rect x="3" y="2" width="2" height="2" fill="#07070f"/><rect x="7" y="2" width="2" height="2" fill="#07070f"/><rect x="5" y="4" width="2" height="1" fill="#07070f"/><rect x="4" y="6" width="4" height="1" fill="#e8e8f4"/><rect x="2" y="7" width="8" height="1" fill="#e8e8f4"/><rect x="1" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="9" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="4" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="7" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="5" y="9" width="2" height="1" fill="#e8e8f4"/><rect x="3" y="12" width="2" height="1" fill="#e8e8f4"/><rect x="7" y="12" width="2" height="1" fill="#e8e8f4"/></svg>
+        <div>The tone, for the record: <b>the stakes are real, the world is ridiculous.</b>
+        Real heroism, talking skeletons, comedic deaths, a narrator who is not impressed with you.</div>
+      </div>
+      <div style="margin-top: 22px; font-size: 21px;"><a href="/game/">how the game works →</a></div>
+    </div>
   </div>
+</section>
 
-  <h2>Latest from the Devlog</h2>
-  <a class="card" href="/devlog/insert-coin.html">
-    <div class="date">Devlog 01 · July 2026</div>
-    <h3>Insert Coin</h3>
-    <p>An arcade with no building yet, a game that can only exist inside it,
-       and week one: proving the fun before anything else.</p>
-  </a>
+<!-- THE ARCADE -->
+<section class="section band">
+  <div class="max grid-visit">
+    <div>
+      <div class="kicker cyan">THE REAL PLACE</div>
+      <h2 class="px" style="margin: 8px 0 18px;">DOORS OPEN 2027</h2>
+      <p class="lede" style="margin-bottom: 26px; max-width: 560px;">The Quarter is a real
+      arcade — cabinets, pinball, a floor full of the machines you remember. There is no
+      building yet: we're starting from an empty lot, town approvals and foundation and
+      framing and all. The location gets announced the day the paperwork clears.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <span class="chip">☑ fun proven first</span>
+        <span class="chip">☐ town approvals</span>
+        <span class="chip">☐ foundation</span>
+        <span class="chip">☐ framing</span>
+        <span class="chip star">★ doors, 2027</span>
+      </div>
+      <div style="margin-top: 22px; font-size: 21px;"><a href="/visit/">about visiting →</a></div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <svg width="240" height="330" viewBox="0 0 16 22" shape-rendering="crispEdges" aria-label="pixel arcade cabinet">
+        <rect x="2" y="0" width="12" height="3" fill="#ff3d9e"/><rect x="3" y="1" width="10" height="1" fill="#ffb300"/>
+        <rect x="2" y="3" width="12" height="1" fill="#2a1a3e"/><rect x="2" y="4" width="12" height="7" fill="#1e1e3a"/>
+        <rect x="3" y="5" width="10" height="5" fill="#07070f"/><rect x="5" y="6" width="2" height="1" fill="#3dff7a"/>
+        <rect x="9" y="7" width="2" height="1" fill="#3dff7a"/><rect x="6" y="8" width="4" height="1" fill="#ffb300"/>
+        <rect x="2" y="11" width="13" height="3" fill="#2a1a3e"/><rect x="4" y="12" width="1" height="1" fill="#ff3d3d"/>
+        <rect x="7" y="12" width="1" height="1" fill="#29d9ff"/><rect x="9" y="12" width="1" height="1" fill="#ffb300"/>
+        <rect x="2" y="14" width="12" height="7" fill="#1e1e3a"/><rect x="3" y="15" width="10" height="5" fill="#14142a"/>
+        <rect x="6" y="16" width="4" height="2" fill="#ffb300"/><rect x="7" y="16" width="2" height="1" fill="#8a5a00"/>
+        <rect x="1" y="21" width="14" height="1" fill="#0d0d1f"/>
+      </svg>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    The Quarter · a small town in New England · opening 2027<br>
-    <a href="/game/">game</a> · <a href="/world/">world</a> ·
-    <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a>
-  </footer>
-</div>
+<!-- DEVLOG -->
+<section class="section">
+  <div class="max">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 12px;">
+      <h2 class="pixel" style="font-size: 22px; color: #f2f2ff; margin: 0;">LATEST FROM THE DEVLOG</h2>
+      <a href="/devlog/" style="font-size: 21px;">all entries →</a>
+    </div>
+    <a class="entry-card" href="/devlog/insert-coin.html">
+      <div class="pixel" style="font-size: 12px; color: var(--amber); line-height: 1.8;">DEVLOG<br>01<br><span style="color: var(--dim);">JUL 2026</span></div>
+      <div>
+        <div class="pixel" style="font-size: 16px; color: var(--green); margin-bottom: 12px;">INSERT COIN</div>
+        <div style="font-size: 23px; line-height: 1.4; color: var(--body);">An arcade with no
+        building yet, a game that can only exist inside it, and week one: proving the fun
+        before anything else.</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="site">
+  <span>THE QUARTER · a small town in New England · opening 2027</span>
+  <span class="sep">|</span>
+  <span><a href="/game/">game</a> · <a href="/world/">world</a> · <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 
 <script>
-  // Live strip: show the world's pulse if a snapshot exists.
+  // Wire the design to the real world snapshot.
   fetch('/data/world.json', {cache: 'no-store'}).then(r => r.json()).then(w => {
-    document.getElementById('lsLevel').textContent = 'LEVEL ' + w.state.frontier_level;
-    document.getElementById('lsMeter').textContent = 'meter ' + w.state.meter.toFixed(1) + '%';
-    document.getElementById('lsRuns').textContent = w.state.total_runs + ' runs this season';
-    document.getElementById('liveStrip').style.display = 'flex';
+    const s = w.state;
+    const lv = s.frontier_level, pct = s.meter;
+    const pad = String(lv).padStart(2, '0');
+    document.getElementById('worldTag').textContent = 'development world · season ' + s.season;
+    document.getElementById('lvNum').textContent = 'LV ' + pad;
+    document.getElementById('meterLabel').textContent = 'LEVEL ' + pad + ' METER';
+    document.getElementById('meterPct').textContent = pct.toFixed(1) + '% — every run moves it';
+    document.getElementById('statRuns').textContent = s.total_runs.toLocaleString();
+    document.getElementById('statKills').textContent = s.total_kills.toLocaleString();
+    document.getElementById('statFallen').textContent = lv - 1;
+
+    // Segmented meter (24 cells).
+    const segs = document.getElementById('segs');
+    const filled = Math.round((Math.min(pct, 100) / 100) * 24);
+    for (let i = 0; i < 24; i++) {
+      const d = document.createElement('div');
+      d.className = 'seg' + (i < filled ? (i === filled - 1 ? ' on edge' : ' on') : '');
+      segs.appendChild(d);
+    }
+
+    // Ledger (latest 4).
+    const led = document.getElementById('homeLedger');
+    const recent = (w.recent || []).slice(0, 4);
+    if (recent.length) {
+      led.innerHTML = '';
+      for (const e of recent) {
+        const div = document.createElement('div');
+        div.className = 'entry ' + (e.prominence || '');
+        const t = document.createElement('span'); t.className = 't';
+        t.textContent = (e.ts || '').slice(11, 16);
+        const x = document.createElement('span'); x.className = 'x';
+        x.textContent = e.text;
+        div.append(t, x);
+        led.appendChild(div);
+      }
+    }
+
+    // Ticker from real history.
+    const texts = (w.recent || []).map(e => '✦ ' + e.text);
+    if (texts.length) {
+      const run = document.getElementById('tickerRun');
+      const half = texts.map(t => `<span>${t.replace(/</g, '&lt;')}</span>`).join('');
+      run.innerHTML = half + half;
+      document.getElementById('tickerBand').style.display = 'block';
+    }
+
+    // Understair cutaway.
+    const rows = document.getElementById('cutawayRows');
+    const mk = (cls, n, nm, tg) => {
+      const r = document.createElement('div'); r.className = 'lv-row' + cls;
+      r.innerHTML = `<span class="n"></span><span class="nm"></span><span class="tg"></span>`;
+      r.children[0].textContent = n; r.children[1].textContent = nm; r.children[2].textContent = tg;
+      rows.appendChild(r);
+    };
+    const all = [];
+    for (let i = 1; i < lv; i++) all.push(['', 'LV ' + String(i).padStart(2, '0'), 'the understair, level ' + i, 'FALLEN ✓']);
+    all.push([' frontier', 'LV ' + pad, 'THE FRONTIER — dig here', pct.toFixed(0) + '%']);
+    all.push([' unlit', 'LV ??', '· · · · · · · · · ·', 'UNLIT']);
+    all.push([' unlit', 'LV ??', '· · · · · · · · · ·', 'UNLIT']);
+    for (const a of all.slice(-9)) mk(a[0], a[1], a[2], a[3]);
+    document.getElementById('unlitCount').textContent = (100 - lv - 2) + ' more, unlit';
   }).catch(() => {});
 </script>
 </body>

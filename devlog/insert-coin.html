@@ -6,104 +6,116 @@
 <title>Insert Coin — The Quarter Devlog 01</title>
 <meta name="description" content="Devlog 01: an arcade with no building yet, a game that can only exist inside it, and week one — proving the fun before anything else.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/" class="here">Devlog</a>
     <a href="/visit/">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap prose">
-  <header class="center" style="margin-bottom: 2.5rem;">
-    <div class="kicker">The Quarter · Devlog 01</div>
-    <h1>Insert Coin</h1>
-    <div class="card date" style="border: none; background: none; padding: 0;">July 2026</div>
-  </header>
+<section class="section" style="padding-top: 64px;">
+  <div class="prose">
+    <div class="kicker dim center" style="margin-bottom: 8px;">THE QUARTER · DEVLOG 01 · JULY 2026</div>
+    <h2 class="px center" style="margin-bottom: 44px; font-size: clamp(20px, 5vw, 30px);">INSERT COIN</h2>
 
-  <p>I'm building an arcade from scratch. And I mean actually from scratch —
-  there is no building yet. An empty lot in a small town in New England, town
-  approvals, foundation, framing, the whole thing — about fourteen months
-  before the doors open.</p>
+    <p>I'm building an arcade from scratch. And I mean actually from scratch —
+    there is no building yet. An empty lot in a small town in New England, town
+    approvals, foundation, framing, the whole thing — about fourteen months
+    before the doors open.</p>
 
-  <p>This devlog is about what I'm doing while I wait.</p>
+    <p>This devlog is about what I'm doing while I wait.</p>
 
-  <p>The arcade will be called <strong>The Quarter</strong>. A real retro
-  arcade — cabinets, pinball, a floor full of machines. And alongside the
-  classics, something of our own: a custom multiplayer game, built for this
-  specific room, where every player in the building plays in the
-  <strong>same persistent world</strong>.</p>
+    <p>The arcade will be called <strong>The Quarter</strong>. A real retro
+    arcade — cabinets, pinball, a floor full of machines. And alongside the
+    classics, something of our own: a custom multiplayer game, built for this
+    specific room, where every player in the building plays in the
+    <strong>same persistent world</strong>.</p>
 
-  <p><em>One world. Every table. Nothing resets.</em></p>
+    <p><em>One world. Every table. Nothing resets.</em></p>
 
-  <h2>The pitch</h2>
+    <h2>THE PITCH</h2>
 
-  <p>Every machine in every arcade forgets you the moment you walk away. This
-  one never forgets anything. There's a world a hundred levels deep, and the
-  whole community digs through it together over a season. Each player gets one
-  free run a day. Every run moves a shared progress meter — on a big wall in
-  the arcade, and online. When a level finally falls, everyone who chipped at
-  it owns a piece of that story, by name, in a permanent public ledger.</p>
+    <p>Every machine in every arcade forgets you the moment you walk away. This
+    one never forgets anything. There's a world a hundred levels deep, and the
+    whole community digs through it together over a season. Each player gets one
+    free run a day. Every run moves a shared progress meter — on a big wall in
+    the arcade, and online. When a level finally falls, everyone who chipped at
+    it owns a piece of that story, by name, in a permanent public ledger.</p>
 
-  <p>The world is built from the real folklore of the towns around the arcade.
-  I'm keeping the location vague until the paperwork is done — but if you're
-  from around here, you'll recognize things. That's a promise.</p>
+    <p>The world is built from the real folklore of the towns around the arcade.
+    I'm keeping the location vague until the paperwork is done — but if you're
+    from around here, you'll recognize things. That's a promise.</p>
 
-  <h2>Week one: prove the fun</h2>
+    <h2>WEEK ONE: PROVE THE FUN</h2>
 
-  <p>There's an old rule in game development: nothing matters if fifteen
-  minutes of play isn't fun. So before the persistent world, before the wall,
-  before any of it, I built the dumbest possible version of the combat.
-  It's a one-person project, so the whole approach is to keep things simple,
-  lean on good tools, and test constantly — the first playable version came
-  together fast.</p>
+    <p>There's an old rule in game development: nothing matters if fifteen
+    minutes of play isn't fun. So before the persistent world, before the wall,
+    before any of it, I built the dumbest possible version of the combat.
+    It's a one-person project, so the whole approach is to keep things simple,
+    lean on good tools, and test constantly — the first playable version came
+    together fast.</p>
 
-  <p>It's all circles and rectangles on purpose (feel first, art later), but
-  by the end of the week the greybox had:</p>
+    <p>It's all circles and rectangles on purpose (feel first, art later), but
+    by the end of the week the greybox had:</p>
 
-  <ul>
-    <li>Four-player drop-in co-op, Gauntlet-style, with skeletons pouring out
-        of bone pits</li>
-    <li>Two classes — a warrior and a wizard with a pointy hat, picked by
-        which button you join with</li>
-    <li>Two enemy types, including a fast little horror that forces you to
-        stop tunnel-visioning</li>
-    <li>A floor you can't trust: some bone piles are décor, some get up when
-        you walk past, and you cannot tell which</li>
-    <li>A boss (crown, two telegraphed attacks, zero respect for you)</li>
-    <li>Sound effects synthesized entirely from code — no audio files
-        exist</li>
-    <li>A narrator who records your deaths and is not impressed</li>
-  </ul>
+    <ul>
+      <li>Four-player drop-in co-op, Gauntlet-style, with skeletons pouring out
+          of bone pits</li>
+      <li>Two classes — a warrior and a wizard with a pointy hat, picked by
+          which button you join with</li>
+      <li>Two enemy types, including a fast little horror that forces you to
+          stop tunnel-visioning</li>
+      <li>A floor you can't trust: some bone piles are décor, some get up when
+          you walk past, and you cannot tell which</li>
+      <li>A boss (crown, two telegraphed attacks, zero respect for you)</li>
+      <li>Sound effects synthesized entirely from code — no audio files
+          exist</li>
+      <li>A narrator who records your deaths and is not impressed</li>
+    </ul>
 
-  <p>And then the part that makes it an <em>arcade attraction</em> instead of
-  just a game: the run reports itself to a server, the server writes it into
-  a permanent ledger, and <a href="/world/">a webpage updates in seconds</a> —
-  level one, meter climbing, the run recorded under the player's name.
-  Forever. That pipeline is the spine of everything this project will
-  become.</p>
+    <p>And then the part that makes it an <em>arcade attraction</em> instead of
+    just a game: the run reports itself to a server, the server writes it into
+    a permanent ledger, and <a href="/world/">a webpage updates in seconds</a> —
+    level one, meter climbing, the run recorded under the player's name.
+    Forever. That pipeline is the spine of everything this project will
+    become.</p>
 
-  <p>The first line ever written into the world's history:</p>
+    <p>The first line ever written into the world's history:</p>
 
-  <blockquote>Season 1 begins. The Mouth is open. The Understair waits.</blockquote>
+    <blockquote>Season 1 begins. The Mouth is open. The Understair waits.</blockquote>
 
-  <h2>Next</h2>
+    <h2>NEXT</h2>
 
-  <p>Four controllers are in the mail. Next episode, real humans play it for
-  the first time — a test with a name (the Fun Gate) and a real chance of
-  failing. That's what makes it worth writing down.</p>
+    <p>Four controllers are in the mail. Next episode, real humans play it for
+    the first time — a test with a name (the Fun Gate) and a real chance of
+    failing. That's what makes it worth writing down.</p>
 
-  <p>Follow along. It's going to take a while. That's the good part.</p>
+    <p>Follow along. It's going to take a while. That's the good part.</p>
+  </div>
+</section>
 
-  <footer>
-    <a href="index.html">← all entries</a> ·
-    <a href="/world/">the world</a> · <a href="/">home</a>
-  </footer>
-</div>
+<footer class="site">
+  <span><a href="index.html">← all entries</a></span>
+  <span class="sep">|</span>
+  <span><a href="/">home</a> · <a href="/world/">the world</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 </body>
 </html>

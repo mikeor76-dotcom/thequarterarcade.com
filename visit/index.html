@@ -6,57 +6,81 @@
 <title>Visit — The Quarter</title>
 <meta name="description" content="The Quarter opens in 2027 — a retro arcade in a small New England town. Location announced when town approvals are complete.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/" class="here">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap">
-  <header class="center" style="margin-bottom: 2rem;">
-    <div class="kicker">Doors Open 2027</div>
-    <h1>You Can't. Yet.</h1>
-    <p class="sub">There is, at present, no building. We're working on that part.</p>
-  </header>
-
-  <div class="prose">
-    <p>The Quarter is being built from the ground up — an empty lot in a
-    small New England town, currently making its way through approvals and
-    toward a foundation. When it opens, this page will have the things a
-    visit page should have: hours, directions, parties, and how to get a
-    company of four onto a table.</p>
-
-    <p>Until then:</p>
+<section class="section" style="padding-top: 64px;">
+  <div class="max grid-visit">
+    <div>
+      <div class="kicker cyan">THE REAL PLACE · DOORS OPEN 2027</div>
+      <h2 class="px" style="margin: 8px 0 18px;">YOU CAN'T. YET.</h2>
+      <p class="lede" style="margin-bottom: 26px; max-width: 560px;">There is, at present, no
+      building. The Quarter is being built from the ground up — an empty lot in a small New
+      England town, currently making its way through approvals and toward a foundation. When
+      it opens, this page will have the things a visit page should have: hours, directions,
+      parties, and how to get a company of four onto a table.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+        <span class="chip">☑ fun proven first</span>
+        <span class="chip">☐ town approvals</span>
+        <span class="chip">☐ foundation</span>
+        <span class="chip">☐ framing</span>
+        <span class="chip star">★ doors, 2027</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 560px;">
+        <a class="feature" href="/devlog/" style="display: block; color: inherit;">
+          <div class="fh">WHILE YOU WAIT</div>
+          <div>Follow the build — the whole thing is documented as it happens, the building and the game, in <span style="color: var(--green);">the devlog</span>.</div>
+        </a>
+        <a class="feature" href="/world/" style="display: block; color: inherit;">
+          <div class="fh">ALREADY ALIVE</div>
+          <div>Watch the world — the game's shared world is already running on the workbench. The real Season 1 begins opening day.</div>
+        </a>
+      </div>
+      <p class="hint" style="margin-top: 26px; font-size: 20px;">The location is announced the
+      day town approvals are complete. A mailing list for opening news is coming soon.</p>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <svg width="240" height="330" viewBox="0 0 16 22" shape-rendering="crispEdges" aria-label="pixel arcade cabinet">
+        <rect x="2" y="0" width="12" height="3" fill="#ff3d9e"/><rect x="3" y="1" width="10" height="1" fill="#ffb300"/>
+        <rect x="2" y="3" width="12" height="1" fill="#2a1a3e"/><rect x="2" y="4" width="12" height="7" fill="#1e1e3a"/>
+        <rect x="3" y="5" width="10" height="5" fill="#07070f"/><rect x="5" y="6" width="2" height="1" fill="#3dff7a"/>
+        <rect x="9" y="7" width="2" height="1" fill="#3dff7a"/><rect x="6" y="8" width="4" height="1" fill="#ffb300"/>
+        <rect x="2" y="11" width="13" height="3" fill="#2a1a3e"/><rect x="4" y="12" width="1" height="1" fill="#ff3d3d"/>
+        <rect x="7" y="12" width="1" height="1" fill="#29d9ff"/><rect x="9" y="12" width="1" height="1" fill="#ffb300"/>
+        <rect x="2" y="14" width="12" height="7" fill="#1e1e3a"/><rect x="3" y="15" width="10" height="5" fill="#14142a"/>
+        <rect x="6" y="16" width="4" height="2" fill="#ffb300"/><rect x="7" y="16" width="2" height="1" fill="#8a5a00"/>
+        <rect x="1" y="21" width="14" height="1" fill="#0d0d1f"/>
+      </svg>
+    </div>
   </div>
+</section>
 
-  <a class="card" href="/devlog/">
-    <div class="tag">While you wait</div>
-    <h3>Follow the build</h3>
-    <p>The whole thing is documented as it happens — the building and the
-       game, in public, in the devlog.</p>
-  </a>
-  <a class="card" href="/world/">
-    <div class="tag">Already alive</div>
-    <h3>Watch the world</h3>
-    <p>The game's shared world is already running on the workbench. The real
-       Season 1 begins opening day.</p>
-  </a>
-
-  <div class="prose" style="margin-top: 2rem;">
-    <p class="sub">The location is announced the day town approvals are
-    complete. A mailing list for opening news is coming soon.</p>
-  </div>
-
-  <footer>
-    The Quarter · a small town in New England · opening 2027
-  </footer>
-</div>
+<footer class="site">
+  <span>THE QUARTER · a small town in New England · opening 2027</span>
+  <span class="sep">|</span>
+  <span><a href="/">home</a> · <a href="/game/">game</a> · <a href="/world/">world</a> · <a href="/devlog/">devlog</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 </body>
 </html>

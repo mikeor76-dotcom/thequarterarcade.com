@@ -6,37 +6,53 @@
 <title>Devlog — The Quarter</title>
 <meta name="description" content="The build story of The Quarter: an arcade built from scratch, and the persistent-world game that can only exist inside it.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/" class="here">Devlog</a>
     <a href="/visit/">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap">
-  <header class="center" style="margin-bottom: 2.5rem;">
-    <div class="kicker">Building an arcade · and its game</div>
-    <h1>DEVLOG</h1>
-    <div class="sub">The build story, as it happens</div>
-  </header>
+<section class="section" style="padding-top: 64px;">
+  <div class="max" style="max-width: 880px;">
+    <div class="kicker dim center" style="margin-bottom: 8px;">BUILDING AN ARCADE · AND ITS GAME</div>
+    <h2 class="px center" style="margin-bottom: 12px;">DEVLOG</h2>
+    <p class="hint center" style="margin-bottom: 44px;">The build story, as it happens.</p>
 
-  <a class="card" href="insert-coin.html">
-    <div class="date">Devlog 01 · July 2026</div>
-    <h3>Insert Coin</h3>
-    <p>An arcade with no building yet, a game that can only exist inside it,
-       and week one: proving the fun before anything else.</p>
-  </a>
+    <a class="entry-card" href="insert-coin.html">
+      <div class="pixel" style="font-size: 12px; color: var(--amber); line-height: 1.8;">DEVLOG<br>01<br><span style="color: var(--dim);">JUL 2026</span></div>
+      <div>
+        <div class="pixel" style="font-size: 16px; color: var(--green); margin-bottom: 12px;">INSERT COIN</div>
+        <div style="font-size: 23px; line-height: 1.4; color: var(--body);">An arcade with no
+        building yet, a game that can only exist inside it, and week one: proving the fun
+        before anything else.</div>
+      </div>
+    </a>
+  </div>
+</section>
 
-  <footer>
-    The Quarter · <a href="/game/">game</a> · <a href="/world/">world</a> ·
-    <a href="/visit/">visit</a>
-  </footer>
-</div>
+<footer class="site">
+  <span>THE QUARTER · a small town in New England · opening 2027</span>
+  <span class="sep">|</span>
+  <span><a href="/">home</a> · <a href="/game/">game</a> · <a href="/world/">world</a> · <a href="/visit/">visit</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 </body>
 </html>

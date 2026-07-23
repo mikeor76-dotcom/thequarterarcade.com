@@ -6,89 +6,74 @@
 <title>The Game — The Quarter</title>
 <meta name="description" content="How The Quarter plays: one free run a day, a shared world a hundred levels deep, and a permanent ledger of every deed. One world, every table, nothing resets.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/" class="here">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap">
-  <header class="center" style="margin-bottom: 2rem;">
-    <div class="kicker">The Flagship Game</div>
-    <h1>One World. Every Table.<br>Nothing Resets.</h1>
-  </header>
+<section class="section" style="padding-top: 64px;">
+  <div class="max" style="max-width: 880px;">
+    <div class="kicker pink center" style="margin-bottom: 8px;">THE FLAGSHIP GAME</div>
+    <h2 class="px center" style="margin-bottom: 32px;">ONE WORLD. EVERY TABLE.<br>NOTHING RESETS.</h2>
 
-  <div class="prose">
-    <p>You walk up to a table with up to three friends, tap in, and become a
-    company of slightly doomed heroes. For the next fifteen minutes you're
-    fighting through <strong>the Understair</strong> — a world beneath the
-    town, a hundred levels deep, full of skeletons, treasure, terrible
-    bargains, and things much larger than you.</p>
+    <div class="prose" style="margin-bottom: 40px;">
+      <p>You walk up to a table with up to three friends, tap in, and become a company of
+      slightly doomed heroes. For the next fifteen minutes you're fighting through
+      <strong>the Understair</strong> — a world beneath the town, a hundred levels deep,
+      full of skeletons, treasure, terrible bargains, and things much larger than you.</p>
+      <p>Then your run ends — in glory or face-down — and here's the unusual part:
+      <strong>the world keeps your mark.</strong></p>
+    </div>
 
-    <p>Then your run ends — in glory or face-down — and here's the unusual
-    part: <strong>the world keeps your mark.</strong></p>
-  </div>
+    <div class="grid-features" style="margin-bottom: 20px;">
+      <div class="feature"><div class="fh">① ONE RUN A DAY</div><div>One free run per person, every day. That's the whole price. It makes each run matter — and it means everyone else is watching.</div></div>
+      <div class="feature"><div class="fh">② A SHARED DESCENT</div><div>Nobody clears a level alone: every run moves the meter, and when it crosses the line the level falls — for everyone, permanently. The number on the wall is the town's number.</div></div>
+      <div class="feature"><div class="fh">③ THE LEDGER</div><div>Every deed recorded by name, in a permanent public history written by the game's narrator. Land the killing blow, take a curse for the common good, get eaten by something ridiculous — it's in the book forever.</div></div>
+      <div class="feature"><div class="fh">④ SEASONS</div><div>Every few months the world ends — climactically — and reforges: new map, new secrets, new legends to be first to find. Glory carries forward. Power doesn't.</div></div>
+    </div>
+    <div class="feature" style="margin-bottom: 40px;"><div class="fh">⑤ A WORLD MADE OF HERE</div><div>The realm is built from the real folklore and landmarks of the towns around the arcade. If you're local, you'll recognize things — and some secrets will only make sense to someone who knows the area.</div></div>
 
-  <h2>How It Works</h2>
-  <div class="card">
-    <div class="tag">One run a day</div>
-    <p>Every player gets one free run per day. That's the whole price. It
-    makes each run matter — and it means everyone else is watching.</p>
-  </div>
-  <div class="card">
-    <div class="tag">A shared descent</div>
-    <p>The whole community is digging through the same hundred levels over a
-    season. Nobody clears a level alone: every run moves a meter, and when it
-    crosses the line, the level falls — for everyone, permanently. The number
-    on the wall is the town's number.</p>
-  </div>
-  <div class="card">
-    <div class="tag">The Ledger</div>
-    <p>Every deed is recorded by name, in a permanent public history written
-    by the game's narrator. Land the killing blow, take a curse for the
-    common good, get eaten by something ridiculous — it's in the book
-    forever.</p>
-  </div>
-  <div class="card">
-    <div class="tag">Seasons</div>
-    <p>Every few months the world ends — climactically — and reforges: new
-    map, new secrets, new legends to be first to find. Glory carries
-    forward. Power doesn't. Every season is a fresh start.</p>
-  </div>
-  <div class="card">
-    <div class="tag">A world made of here</div>
-    <p>The realm is built from the real folklore and landmarks of the towns
-    around the arcade. If you're local, you'll recognize things — and some
-    secrets will only make sense to someone who knows the area.</p>
-  </div>
+    <div class="tone-box" style="margin-bottom: 48px;">
+      <svg width="52" height="52" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="6" height="1" fill="#e8e8f4"/><rect x="2" y="1" width="8" height="4" fill="#e8e8f4"/><rect x="3" y="5" width="6" height="1" fill="#e8e8f4"/><rect x="3" y="2" width="2" height="2" fill="#07070f"/><rect x="7" y="2" width="2" height="2" fill="#07070f"/><rect x="5" y="4" width="2" height="1" fill="#07070f"/><rect x="4" y="6" width="4" height="1" fill="#e8e8f4"/><rect x="2" y="7" width="8" height="1" fill="#e8e8f4"/><rect x="1" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="9" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="4" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="7" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="5" y="9" width="2" height="1" fill="#e8e8f4"/><rect x="3" y="12" width="2" height="1" fill="#e8e8f4"/><rect x="7" y="12" width="2" height="1" fill="#e8e8f4"/></svg>
+      <div>The tone, for the record: <b>the stakes are real, the world is ridiculous.</b>
+      Real heroism, talking skeletons, comedic deaths, a narrator who is not impressed with you.</div>
+    </div>
 
-  <div class="prose" style="margin-top: 2rem;">
-    <p><em>The tone, for the record: the stakes are real, the world is
-    ridiculous. Real heroism, talking skeletons, comedic deaths, a narrator
-    who is not impressed with you.</em></p>
+    <h2 class="pixel" style="font-size: 16px; color: var(--green); margin-bottom: 16px;">STATUS</h2>
+    <div class="prose">
+      <p>In development, honestly and in public. The combat prototype is playable (all circles
+      and rectangles, on purpose), the persistent world pipeline is running, and
+      <a href="/world/">you can watch the development world right now</a>. The whole build is
+      documented in <a href="/devlog/">the devlog</a>. Doors — and the real Season 1 — open
+      with the arcade in 2027.</p>
+    </div>
   </div>
+</section>
 
-  <h2>Status</h2>
-  <div class="prose">
-    <p>In development, honestly and in public. The combat prototype is
-    playable (all circles and rectangles, on purpose), the persistent world
-    pipeline is running, and <a href="/world/">you can watch the development
-    world right now</a>. The whole build is documented in
-    <a href="/devlog/">the devlog</a>. Doors — and the real Season 1 —
-    open with the arcade in 2027.</p>
-  </div>
-
-  <footer>
-    The Quarter · <a href="/world/">the world</a> ·
-    <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a>
-  </footer>
-</div>
+<footer class="site">
+  <span>THE QUARTER · a small town in New England · opening 2027</span>
+  <span class="sep">|</span>
+  <span><a href="/">home</a> · <a href="/world/">world</a> · <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 </body>
 </html>

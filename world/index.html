@@ -6,57 +6,95 @@
 <title>The World — The Quarter</title>
 <meta name="description" content="The live state of The Quarter's shared world: the current frontier level, the community meter, and the Ledger of every deed.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
 <nav class="nav">
-  <a href="/" class="brand">THE QUARTER</a>
+  <a class="brand" href="/">
+    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
+    <span>THE QUARTER</span>
+  </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/" class="here">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
+    <span class="insert-coin">INSERT COIN</span>
   </div>
 </nav>
 
-<div class="wrap">
-  <header class="center" style="margin-bottom: 1.5rem;">
-    <div class="kicker">The Living World</div>
-    <h1>THE UNDERSTAIR</h1>
-    <div class="sub" id="season">—</div>
-  </header>
-
-  <div class="prose" style="margin-bottom: 1.5rem;">
-    <p class="sub" style="text-align: center;">This is the world's live state —
-    every run played moves what you see here. Right now it's the
-    <strong>development world</strong>, running on the workbench while the
-    game is built (<a href="/game/">what is this?</a>). The real Season 1
+<section class="section" style="padding-top: 56px;">
+  <div class="max">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap;">
+      <span class="live-dot"></span>
+      <span class="pixel" style="font-size: 12px; color: #ff6b6b;">LIVE</span>
+      <span class="pixel" style="font-size: 20px; color: #f2f2ff;">THE UNDERSTAIR</span>
+      <span id="worldTag" style="font-size: 20px; color: var(--dim); margin-left: auto;">development world</span>
+    </div>
+    <p class="hint" style="font-size: 21px; margin-bottom: 40px; max-width: 760px;">Every run
+    played moves what you see here. Right now it's the development world, running on the
+    workbench while the game is built (<a href="/game/">what is this?</a>). The real Season 1
     begins when the arcade opens.</p>
-  </div>
 
-  <div class="level-card">
-    <div class="level-label">Current Frontier</div>
-    <div class="level-num" id="level">—</div>
-    <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
-    <div class="meter-text" id="meterText">meter —</div>
-    <div class="totals">
-      <div><b id="runs">—</b>runs this season</div>
-      <div><b id="kills">—</b>skeletons re-killed</div>
+    <div class="grid-2" style="margin-bottom: 48px;">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <div style="display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <div style="font-size: 21px; color: var(--dim); letter-spacing: 2px;">CURRENT FRONTIER</div>
+            <div class="frontier-num" id="lvNum">LV --</div>
+          </div>
+          <div style="font-size: 24px; color: var(--body);">of 100<br><span style="color: var(--dim); font-size: 20px;">the town digs together</span></div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 20px; color: var(--dim); margin-bottom: 8px; flex-wrap: wrap;">
+            <span id="meterLabel">LEVEL METER</span><span style="color: var(--green);" id="meterPct">--%</span>
+          </div>
+          <div class="seg-track" id="segs"></div>
+        </div>
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <div><div class="stat-num" id="statRuns">—</div><div class="stat-label">runs this season</div></div>
+          <div><div class="stat-num" id="statKills">—</div><div class="stat-label">skeletons re-killed</div></div>
+          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label">levels fallen forever</div></div>
+        </div>
+        <div id="updated" class="hint" style="font-size: 19px;"></div>
+      </div>
+      <div class="panel deep" style="padding: 24px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+          <span class="pixel" style="font-size: 12px; color: var(--amber);">THE LEDGER</span>
+          <span style="font-size: 18px; color: var(--dim);">the Chronicler records all</span>
+        </div>
+        <div class="offline" style="color: var(--red); font-family: var(--term); font-size: 20px; text-align: center; padding: 1.5rem; display: none;" id="offline">— the world is quiet · no ledger data yet —</div>
+        <div class="ledger" id="ledger"></div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="offline" id="offline">— the world is quiet · no ledger data yet —</div>
-
-  <h2>The Ledger</h2>
-  <div class="ledger" id="ledger"></div>
-
-  <footer>
-    The Chronicler records all · refreshed live ·
-    <a href="/devlog/">devlog</a>
-  </footer>
-</div>
+<footer class="site">
+  <span>The Chronicler records all · refreshed live</span>
+  <span class="sep">|</span>
+  <span><a href="/">home</a> · <a href="/game/">game</a> · <a href="/devlog/">devlog</a></span>
+  <span class="sep">|</span>
+  <span class="game-over">GAME OVER? NEVER.</span>
+</footer>
 
 <script>
+  function segsRender(pct) {
+    const segs = document.getElementById('segs');
+    segs.innerHTML = '';
+    const filled = Math.round((Math.min(pct, 100) / 100) * 24);
+    for (let i = 0; i < 24; i++) {
+      const d = document.createElement('div');
+      d.className = 'seg' + (i < filled ? (i === filled - 1 ? ' on edge' : ' on') : '');
+      segs.appendChild(d);
+    }
+  }
   async function refresh() {
     try {
       const r = await fetch('/data/world.json', {cache: 'no-store'});
@@ -64,36 +102,34 @@
       const w = await r.json();
       document.getElementById('offline').style.display = 'none';
       const s = w.state;
-      document.getElementById('season').textContent =
-        'Season ' + s.season + ' · updated ' + w.generated_at;
-      document.getElementById('level').textContent = 'LEVEL ' + s.frontier_level;
-      document.getElementById('meterFill').style.width = Math.min(s.meter, 100) + '%';
-      document.getElementById('meterText').textContent = 'meter ' + s.meter.toFixed(1) + '%';
-      document.getElementById('runs').textContent = s.total_runs;
-      document.getElementById('kills').textContent = s.total_kills;
-      const ledger = document.getElementById('ledger');
-      ledger.innerHTML = '';
+      const pad = String(s.frontier_level).padStart(2, '0');
+      document.getElementById('worldTag').textContent = 'development world · season ' + s.season;
+      document.getElementById('lvNum').textContent = 'LV ' + pad;
+      document.getElementById('meterLabel').textContent = 'LEVEL ' + pad + ' METER';
+      document.getElementById('meterPct').textContent = s.meter.toFixed(1) + '% — every run moves it';
+      document.getElementById('statRuns').textContent = s.total_runs.toLocaleString();
+      document.getElementById('statKills').textContent = s.total_kills.toLocaleString();
+      document.getElementById('statFallen').textContent = s.frontier_level - 1;
+      document.getElementById('updated').textContent = 'updated ' + w.generated_at;
+      segsRender(s.meter);
+      const led = document.getElementById('ledger');
+      led.innerHTML = '';
       for (const e of (w.recent || [])) {
         const div = document.createElement('div');
-        div.className = 'entry ' + (e.prominence || 'entry');
-        const text = document.createElement('div');
-        text.textContent = e.text;
-        div.appendChild(text);
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-        meta.textContent = 'day ' + e.day + ' · ' + e.ts + ' · ' + e.type + ' · ' + e.id;
-        div.appendChild(meta);
+        div.className = 'entry ' + (e.prominence || '');
+        const t = document.createElement('span'); t.className = 't';
+        t.textContent = 'd' + e.day + ' ' + (e.ts || '').slice(11, 16);
+        const x = document.createElement('span'); x.className = 'x';
+        x.textContent = e.text;
+        div.append(t, x);
         if (e.media && e.media.shot) {
-          const shot = document.createElement('div');
-          shot.className = 'shot';
+          const shot = document.createElement('div'); shot.className = 'shot';
           const img = document.createElement('img');
-          img.src = '/data/shots/' + e.media.shot;
-          img.alt = 'run screenshot';
+          img.src = '/data/shots/' + e.media.shot; img.alt = 'run screenshot';
           img.onerror = () => shot.remove();
-          shot.appendChild(img);
-          div.appendChild(shot);
+          shot.appendChild(img); x.appendChild(shot);
         }
-        ledger.appendChild(div);
+        led.appendChild(div);
       }
     } catch (err) {
       document.getElementById('offline').style.display = 'block';
