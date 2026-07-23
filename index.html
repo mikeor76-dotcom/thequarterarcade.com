@@ -48,7 +48,7 @@
     <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 40px; flex-wrap: wrap;">
       <span class="live-dot"></span>
       <span class="pixel" style="font-size: 12px; color: #ff6b6b;">LIVE</span>
-      <span class="pixel" style="font-size: 16px; color: #f2f2ff;">THE UNDERSTAIR</span>
+      <span class="pixel" style="font-size: 16px; color: #f2f2ff;">THE WORLD</span>
       <span id="worldTag" style="font-size: 20px; color: var(--dim); margin-left: auto;">development world</span>
     </div>
 
@@ -56,10 +56,10 @@
       <div style="display: flex; flex-direction: column; gap: 28px;">
         <div style="display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;">
           <div>
-            <div style="font-size: 21px; color: var(--dim); letter-spacing: 2px;">CURRENT FRONTIER</div>
-            <div class="frontier-num" id="lvNum">LV --</div>
+            <div style="font-size: 21px; color: var(--dim); letter-spacing: 2px;">CURRENT CHAPTER</div>
+            <div class="frontier-num" id="lvNum">CH --</div>
           </div>
-          <div style="font-size: 24px; color: var(--body);">of 100<br><span style="color: var(--dim); font-size: 20px;">the town digs together</span></div>
+          <div style="font-size: 24px; color: var(--body);">of 25<br><span style="color: var(--dim); font-size: 20px;">the town writes it together</span></div>
         </div>
         <div>
           <div style="display: flex; justify-content: space-between; font-size: 20px; color: var(--dim); margin-bottom: 8px; flex-wrap: wrap;">
@@ -70,7 +70,7 @@
         <div style="display: flex; gap: 40px; flex-wrap: wrap;">
           <div><div class="stat-num" id="statRuns">—</div><div class="stat-label">runs this season</div></div>
           <div><div class="stat-num" id="statKills">—</div><div class="stat-label">skeletons re-killed</div></div>
-          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label">levels fallen forever</div></div>
+          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label">chapters written forever</div></div>
         </div>
       </div>
 
@@ -115,13 +115,13 @@
       <div class="kicker pink">THE FLAGSHIP GAME</div>
       <h2 class="px" style="margin: 0 0 18px;">A WORLD THAT NEVER RESETS</h2>
       <p class="lede" style="margin-bottom: 30px;">Most arcade games forget you the moment you
-      walk away. We're building one that never forgets anything. One shared world beneath the
-      town, a hundred levels deep, that the whole room digs through
-      <em style="color: var(--green); font-style: normal;">together</em>. When a level falls,
-      it falls for everyone, forever.</p>
+      walk away. We're building one that never forgets anything. One shared world — towns,
+      fields, and the dark places under them — that the whole room plays through
+      <em style="color: var(--green); font-style: normal;">together</em>, twenty-five chapters
+      a season. When a chapter is written, it's written for everyone, forever.</p>
       <div class="grid-features">
         <div class="feature"><div class="fh">① ONE RUN A DAY</div><div>One free run per person. That's the whole price — and everyone is watching.</div></div>
-        <div class="feature"><div class="fh">② A SHARED DESCENT</div><div>Every run moves the meter. The number on the wall is the town's number.</div></div>
+        <div class="feature"><div class="fh">② A SHARED STORY</div><div>Every run moves the chapter meter. The number on the wall is the town's number.</div></div>
         <div class="feature"><div class="fh">③ THE LEDGER</div><div>Every deed recorded by name, forever. Glory and comedic death alike.</div></div>
         <div class="feature"><div class="fh">④ SEASONS</div><div>Every few months the world ends — climactically — and reforges. Glory carries forward.</div></div>
       </div>
@@ -201,15 +201,15 @@
   // Wire the design to the real world snapshot.
   fetch('/data/world.json', {cache: 'no-store'}).then(r => r.json()).then(w => {
     const s = w.state;
-    const lv = s.frontier_level, pct = s.meter;
-    const pad = String(lv).padStart(2, '0');
+    const ch = s.chapter, pct = s.meter;
+    const pad = String(ch).padStart(2, '0');
     document.getElementById('worldTag').textContent = 'development world · season ' + s.season;
-    document.getElementById('lvNum').textContent = 'LV ' + pad;
-    document.getElementById('meterLabel').textContent = 'LEVEL ' + pad + ' METER';
+    document.getElementById('lvNum').textContent = 'CH ' + pad;
+    document.getElementById('meterLabel').textContent = 'CHAPTER ' + pad + ' METER';
     document.getElementById('meterPct').textContent = pct.toFixed(1) + '% — every run moves it';
     document.getElementById('statRuns').textContent = s.total_runs.toLocaleString();
     document.getElementById('statKills').textContent = s.total_kills.toLocaleString();
-    document.getElementById('statFallen').textContent = lv - 1;
+    document.getElementById('statFallen').textContent = ch - 1;
 
     // Segmented meter (24 cells).
     const segs = document.getElementById('segs');
@@ -246,7 +246,7 @@
       document.getElementById('tickerBand').style.display = 'block';
     }
 
-    // Understair cutaway.
+    // The season's book: chapters written, the one being written, the unwritten.
     const rows = document.getElementById('cutawayRows');
     const mk = (cls, n, nm, tg) => {
       const r = document.createElement('div'); r.className = 'lv-row' + cls;
@@ -255,12 +255,12 @@
       rows.appendChild(r);
     };
     const all = [];
-    for (let i = 1; i < lv; i++) all.push(['', 'LV ' + String(i).padStart(2, '0'), 'the understair, level ' + i, 'FALLEN ✓']);
-    all.push([' frontier', 'LV ' + pad, 'THE FRONTIER — dig here', pct.toFixed(0) + '%']);
-    all.push([' unlit', 'LV ??', '· · · · · · · · · ·', 'UNLIT']);
-    all.push([' unlit', 'LV ??', '· · · · · · · · · ·', 'UNLIT']);
+    for (let i = 1; i < ch; i++) all.push(['', 'CH ' + String(i).padStart(2, '0'), 'chapter ' + i + ', closed', 'WRITTEN ✓']);
+    all.push([' frontier', 'CH ' + pad, 'BEING WRITTEN — right now', pct.toFixed(0) + '%']);
+    all.push([' unlit', 'CH ??', '· · · · · · · · · ·', 'UNWRITTEN']);
+    all.push([' unlit', 'CH ??', '· · · · · · · · · ·', 'UNWRITTEN']);
     for (const a of all.slice(-9)) mk(a[0], a[1], a[2], a[3]);
-    document.getElementById('unlitCount').textContent = (100 - lv - 2) + ' more, unlit';
+    document.getElementById('unlitCount').textContent = Math.max(25 - ch - 2, 0) + ' more, unwritten';
   }).catch(() => {});
 </script>
 </body>
