@@ -85,6 +85,26 @@
         <div style="margin-top: 16px; font-size: 20px;"><a href="/world/">full ledger →</a></div>
       </div>
     </div>
+
+    <a id="chronCard" href="/world/chronicle/" style="display: none; margin: 0 0 48px; border: 2px solid var(--line); padding: 18px 22px; text-decoration: none; gap: 20px; align-items: center;">
+      <img id="chronImg" src="" alt="" style="height: 84px;">
+      <span>
+        <span class="pixel" style="font-size: 11px; color: var(--amber);">THE DAILY CHRONICLE</span><br>
+        <span id="chronTitle" style="font-size: 24px; color: #e8e4d8;"></span><br>
+        <span style="font-size: 19px; color: var(--green);">read last night's page →</span>
+      </span>
+    </a>
+    <script>
+    fetch('/world/chronicle/latest.json').then(r => r.ok ? r.json() : null).then(j => {
+      if (!j) return;
+      document.getElementById('chronTitle').textContent = j.title;
+      const im = document.getElementById('chronImg');
+      if (j.image) { im.src = j.image; } else { im.style.display = 'none'; }
+      const c = document.getElementById('chronCard');
+      c.href = '/world/chronicle/' + j.date + '/';
+      c.style.display = 'flex';
+    }).catch(() => {});
+    </script>
   </div>
 
   <div class="ticker-band" id="tickerBand" style="display: none; margin: 0 -32px;">
