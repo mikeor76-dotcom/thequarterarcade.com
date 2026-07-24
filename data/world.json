@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-24T12:45:41",
+	"generated_at": "2026-07-24T13:24:57",
 	"notables": [
 		{
 			"actor": {
@@ -197,6 +197,45 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": 74,
+				"contribution": 2.3,
+				"crew_size": 2,
+				"deaths": 9,
+				"kills": 3,
+				"level_time": 103.331608666662,
+				"meter_after": 79.9,
+				"victory": false
+			},
+			"day": 2,
+			"id": "evt_1784913897_8253",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1784913827_boss_intro.png",
+						"tag": "boss_intro"
+					},
+					{
+						"file": "moment_1784913894_defeat.png",
+						"tag": "defeat"
+					}
+				],
+				"shot": "shot_1784913896.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-02",
+			"text": "MIKE's company returns from Chapter 2 with 3 kills. The meter climbs to 79%.",
+			"ts": "2026-07-24T13:24:57",
+			"type": "run.completed",
+			"unix": 1784913897,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -790,46 +829,17 @@
 			"unix": 1784848203.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "MIKE"
-			},
-			"data": {
-				"boss_hp_pct": -1.0,
-				"contribution": 4.0,
-				"crew_size": 1.0,
-				"deaths": 1.0,
-				"kills": 20.0,
-				"level_time": 65.0462896666647,
-				"meter_after": 6.59999999999999,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784847376_8142",
-			"media": {
-				"shot": "shot_1784847375.png"
-			},
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-02",
-			"text": "MIKE's company returns from Chapter 2 with 20 kills. The meter climbs to 6%.",
-			"ts": "2026-07-23T18:56:16",
-			"type": "run.completed",
-			"unix": 1784847376.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 2.0,
-		"day_meter_gain": 43.1,
-		"day_runs": 11,
+		"day_meter_gain": 45.4,
+		"day_runs": 12,
 		"last_day": 2,
-		"meter": 77.6,
+		"meter": 79.9,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 476,
-		"total_runs": 50
+		"total_kills": 479,
+		"total_runs": 51
 	}
 }
