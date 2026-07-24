@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Daily Chronicle — 2026-07-23 — The Quarter</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.article{max-width:760px;margin:0 auto;padding:24px}
+.article h1{font-family:'Press Start 2P';font-size:22px;line-height:1.6;color:var(--amber)}
+.dateline{color:var(--green);font-size:22px;margin:8px 0 26px}
+.beat{margin:34px 0}
+.beat img{max-width:100%;max-height:340px;display:block;margin:0 auto 14px;image-rendering:auto}
+.beat p{font-size:26px;line-height:1.5;color:#e8e4d8}
+.hearth{display:inline-block;margin:10px 0 30px}
+#show{position:fixed;inset:0;background:#050409;display:none;z-index:50;
+  align-items:center;justify-content:center;flex-direction:column;text-align:center}
+#show.on{display:flex}
+#show img{max-width:min(80vw,900px);max-height:60vh;animation:kb 9s ease-in-out infinite alternate}
+#show p{font-size:27px;color:#e8e4d8;max-width:760px;padding:0 24px;line-height:1.5}
+#show .hint{position:absolute;bottom:18px;font-size:18px;color:#777}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07) translateY(-8px)}}
+.backlink{font-size:20px}
+</style></head><body>
+<nav class="nav">
+  <a class="brand" href="/">THE QUARTER</a>
+  <span>
+    <a href="/game/">The Game</a>
+    <a href="/world/">The World</a>
+    <a href="/devlog/">Devlog</a>
+    <a href="/visit/">Visit</a>
+  </span>
+</nav>
+<div class="article">
+  <div class="backlink"><a href="/world/chronicle/">« the season's book</a></div>
+  <h1>The Bone Marshal Falls Twice, and Chapter One Closes Its Book</h1>
+  <div class="dateline">THE DAILY CHRONICLE · 2026-07-23</div>
+  <a class="btn hearth" id="listen" href="#">◈ LISTEN AT THE HEARTH</a>
+  
+    <section class="beat">
+      <img src="/world/chronicle/art/tavern.png" alt="" loading="lazy">
+      <p>The morning was slow going. A handful of companies filed through Chapter One, MIKE's own men returning again and again with thin pickings, the meter creeping like a snail on a cold stone. Then something changed in the marrow of the woods.</p>
+    </section>
+    <section class="beat">
+      <img src="/world/chronicle/art/tavern.png" alt="" loading="lazy">
+      <p>MIKE's company found the Bone Marshal first near midday, and put him down proper. The meter surged like a river past its banks. It seemed the day had turned, and turned again when a second Marshal fell that very afternoon, sending the book past three-quarters full.</p>
+    </section>
+    <section class="beat">
+      <img src="/world/chronicle/art/tavern.png" alt="" loading="lazy">
+      <p>What followed was a grind of quiet, patient work. Company after company went in, some coming back empty-handed, some dragging home fair numbers, but always the meter crept upward, stubborn as a mule and twice as sure. By evening it stood full to the brim.</p>
+    </section>
+    <section class="beat">
+      <img src="/world/chronicle/art/tavern.png" alt="" loading="lazy">
+      <p>CHAPTER ONE IS WRITTEN. One of twenty-five pages now sits inked and done, and the town breathed easy for the length of a single bell. Then MIKE's company marched straight into Chapter Two without so much as a rest, and the killing there was fierce from the first bell — thirty-four laid low in one return alone.</p>
+    </section>
+    <section class="beat">
+      <img src="/world/chronicle/art/skeleton.png" alt="" loading="lazy">
+      <p>Chapter Two's meter already climbs past a third full, faster than its predecessor ever dared. The Chronicler dips his pen again, wondering what waits deeper in these woods, and whether MIKE's company means to write the whole season alone.</p>
+    </section>
+  <section class="beat">
+    <p style="color:var(--green)">The Bury lives at The Quarter, Woodbury CT.
+    Come write tomorrow's page. <a href="/visit/">about visiting →</a></p>
+  </section>
+</div>
+<div id="show"><img id="s-img"><p id="s-txt"></p><div class="hint">click: next · esc: leave the hearth</div></div>
+<script>
+const BEATS = [{"text": "The morning was slow going. A handful of companies filed through Chapter One, MIKE's own men returning again and again with thin pickings, the meter creeping like a snail on a cold stone. Then something changed in the marrow of the woods.", "src": "/world/chronicle/art/tavern.png", "audio": "/world/chronicle/2026-07-23/beat-0.mp3"}, {"text": "MIKE's company found the Bone Marshal first near midday, and put him down proper. The meter surged like a river past its banks. It seemed the day had turned, and turned again when a second Marshal fell that very afternoon, sending the book past three-quarters full.", "src": "/world/chronicle/art/tavern.png", "audio": "/world/chronicle/2026-07-23/beat-1.mp3"}, {"text": "What followed was a grind of quiet, patient work. Company after company went in, some coming back empty-handed, some dragging home fair numbers, but always the meter crept upward, stubborn as a mule and twice as sure. By evening it stood full to the brim.", "src": "/world/chronicle/art/tavern.png", "audio": "/world/chronicle/2026-07-23/beat-2.mp3"}, {"text": "CHAPTER ONE IS WRITTEN. One of twenty-five pages now sits inked and done, and the town breathed easy for the length of a single bell. Then MIKE's company marched straight into Chapter Two without so much as a rest, and the killing there was fierce from the first bell \u2014 thirty-four laid low in one return alone.", "src": "/world/chronicle/art/tavern.png", "audio": "/world/chronicle/2026-07-23/beat-3.mp3"}, {"text": "Chapter Two's meter already climbs past a third full, faster than its predecessor ever dared. The Chronicler dips his pen again, wondering what waits deeper in these woods, and whether MIKE's company means to write the whole season alone.", "src": "/world/chronicle/art/skeleton.png", "audio": "/world/chronicle/2026-07-23/beat-4.mp3"}];
+const show = document.getElementById('show');
+let i = -1, player = new Audio();
+function step() {
+  i++;
+  if (i >= BEATS.length) return leave();
+  document.getElementById('s-img').src = BEATS[i].src;
+  document.getElementById('s-txt').textContent = BEATS[i].text;
+  if (BEATS[i].audio) { player.src = BEATS[i].audio; player.play(); }
+}
+function leave() { show.classList.remove('on'); player.pause(); i = -1; }
+const btn = document.getElementById('listen');
+if (btn) btn.addEventListener('click', e => {
+  e.preventDefault(); show.classList.add('on'); i = -1; step();
+});
+player.addEventListener('ended', step);
+show.addEventListener('click', () => { if (i >= 0) step(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') leave(); });
+</script>
+</body></html>
