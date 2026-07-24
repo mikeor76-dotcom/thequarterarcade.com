@@ -67,8 +67,8 @@
 <div id="show"><img id="s-img"><p id="s-txt"></p>
 <div class="hint">click: next · esc: leave the hearth · <span id="mtoggle" style="cursor:pointer"></span></div></div>
 <script>
-const BEATS = [{"text": "MIKE went down alone again today, same as every day this week. No banners, no second company at his back, just one man walking into Chapter 1 over and over until the walking became the whole story. The meter crept up in small, stubborn steps: seven, nine, eleven.", "src": "/world/chronicle/art/warrior.png", "audio": "/world/chronicle/2026-07-23/beat-0.mp3", "music": {"bed": "chronicle-opening", "bedAction": "start", "bedNext": "exploration-discovery", "sting": null}}, {"text": "Then the ground shook and the Bone Marshal fell, cut down twice more before the sun set on Chapter 1. The meter surged each time like a held breath let go. By day's end the book of that chapter closed for good, one hundred percent, and the town felt it turn.", "src": "/data/shots/shot_1784835828.png", "audio": "/world/chronicle/2026-07-23/beat-1.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "Chapter 2 opened and MIKE did not rest. He walked back in the same evening, kills climbing in fistfuls this time, twenty, then twenty-six, then thirty-four, the meter answering him step for step.", "src": "/data/shots/shot_1784849344.png", "audio": "/world/chronicle/2026-07-23/beat-2.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "By the day's last run the Bone Marshal rose again in this new chapter, and MIKE put him down a third time. The meter jumped clean to its halfway mark. Two chapters now know his name, and thirty-one companies still lie underground behind him, waiting their turn.", "src": "/data/shots/shot_1784855832.png", "audio": "/world/chronicle/2026-07-23/beat-3.mp3", "music": {"bed": "battle", "bedAction": "crossfade", "bedNext": null, "sting": null}}, {"text": "Chapter 2 stands half-written, the Marshal's ashes still warm. Whether MIKE walks alone again tomorrow, or whether the town finally sends more hands to the door, the Chronicler cannot yet say. He only knows the pen stays sharp.", "src": "/world/chronicle/art/marshal.png", "audio": "/world/chronicle/2026-07-23/beat-4.mp3", "music": {"bed": "battle", "bedAction": "continue", "bedNext": null, "sting": null}}];
-const CUES = {"exploration-discovery": {"url": "/world/chronicle/music/exploration-discovery.mp3", "duration": 25.32, "loopMode": "crossfade", "narrationVol": 0.22, "pauseVol": 0.45, "fadeIn": 1.6, "fadeOut": 2.4, "sting": false}, "battle": {"url": "/world/chronicle/music/battle.mp3", "duration": 24.24, "loopMode": "crossfade", "narrationVol": 0.18, "pauseVol": 0.4, "fadeIn": 0.8, "fadeOut": 1.8, "sting": false}, "chronicle-opening": {"url": "/world/chronicle/music/chronicle-opening.mp3", "duration": 9.84, "loopMode": "none", "narrationVol": 0.34, "pauseVol": 0.6, "fadeIn": 0.2, "fadeOut": 2.2, "sting": false}};
+const BEATS = [{"text": "MIKE went down alone again today, same as every day this week. No banners, no second company at his back, just one man walking into Chapter 1 over and over until the walking became the whole story. The meter crept up in small, stubborn steps: seven, nine, eleven.", "src": "/world/chronicle/art/warrior.png", "audio": "/world/chronicle/2026-07-23/beat-0.mp3", "music": {"bed": "chronicle-opening", "bedAction": "start", "bedNext": "exploration-discovery", "sting": null}}, {"text": "Then the ground shook and the Bone Marshal fell, cut down twice more before the sun set on Chapter 1. The meter surged each time like a held breath let go. By day's end the book of that chapter closed for good, one hundred percent, and the town felt it turn.", "src": "/data/shots/shot_1784835828.png", "audio": "/world/chronicle/2026-07-23/beat-1.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "Chapter 2 opened and MIKE did not rest. He walked back in the same evening, kills climbing in fistfuls this time, twenty, then twenty-six, then thirty-four, the meter answering him step for step.", "src": "/data/shots/shot_1784849344.png", "audio": "/world/chronicle/2026-07-23/beat-2.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "By the day's last run the Bone Marshal rose again in this new chapter, and MIKE put him down a third time. The meter jumped clean to its halfway mark. Two chapters now know his name, and thirty-one companies still lie underground behind him, waiting their turn.", "src": "/data/shots/shot_1784855832.png", "audio": "/world/chronicle/2026-07-23/beat-3.mp3", "music": {"bed": "battle", "bedAction": "crossfade", "bedNext": null, "sting": null}}, {"text": "Chapter 2 stands half-written, the Marshal's ashes still warm. Whether MIKE walks alone again tomorrow, or whether the town finally sends more hands to the door, the Chronicler cannot yet say. He only knows the pen stays sharp.", "src": "/world/chronicle/art/marshal.png", "audio": "/world/chronicle/2026-07-23/beat-4.mp3", "music": {"bed": "chronicle-closing", "bedAction": "crossfade", "bedNext": null, "sting": null}}];
+const CUES = {"exploration-discovery": {"url": "/world/chronicle/music/exploration-discovery.mp3", "duration": 25.32, "loopMode": "crossfade", "narrationVol": 0.22, "pauseVol": 0.45, "fadeIn": 1.6, "fadeOut": 2.4, "sting": false, "gain": 0.864}, "battle": {"url": "/world/chronicle/music/battle.mp3", "duration": 24.24, "loopMode": "crossfade", "narrationVol": 0.18, "pauseVol": 0.4, "fadeIn": 0.8, "fadeOut": 1.8, "sting": false, "gain": 0.973}, "chronicle-closing": {"url": "/world/chronicle/music/chronicle-closing.mp3", "duration": 14.352, "loopMode": "none", "narrationVol": 0.3, "pauseVol": 0.58, "fadeIn": 0.6, "fadeOut": 3.0, "sting": false, "gain": 1.371}, "chronicle-opening": {"url": "/world/chronicle/music/chronicle-opening.mp3", "duration": 9.84, "loopMode": "none", "narrationVol": 0.34, "pauseVol": 0.6, "fadeIn": 0.2, "fadeOut": 2.2, "sting": false, "gain": 1.027}};
 const show = document.getElementById('show');
 let i = -1, player = new Audio();
 
@@ -83,13 +83,22 @@ const mx = {
   tick: null, looping: false,
 };
 for (const el of [mx.a, mx.b, mx.st]) { el.preload = 'none'; el.volume = 0; }
+const warm = new Audio(); warm.preload = 'none'; warm.volume = 0;
+function prewarm() {
+  // Fetch the next beat's cue ahead of its entrance — no gap on arrival.
+  const nxt = (i >= 0 && i + 1 < BEATS.length) ? BEATS[i + 1].music : null;
+  if (!nxt) return;
+  const want = (nxt.bed && nxt.bed !== mx.bed && cue(nxt.bed)) ? nxt.bed
+             : (nxt.sting && cue(nxt.sting)) ? nxt.sting : null;
+  if (want) { warm.src = cue(want).url; warm.preload = 'auto'; warm.load(); }
+}
 function cue(id) { return (id && CUES[id] && !mx.dead.has(id)) ? CUES[id] : null; }
 function bedTarget() {
   const c = cue(mx.bed);
   if (!c || mx.off) return 0;
   let v = mx.narr ? c.narrationVol : c.pauseVol;
   if (mx.sting) v *= 0.5;               // stings own the moment
-  return v * mx.master;
+  return v * (c.gain || 1) * mx.master; // gain: build-time loudness leveling
 }
 function ramp(el, to, dur) {
   mx.ramps = mx.ramps.filter(r => r.el !== el);
@@ -151,7 +160,7 @@ function playSting(id) {
   mx.st.volume = 0; mx.sting = true; reduck(0.5);
   mx.st.onended = mx.st.onerror = () => { mx.sting = false; reduck(1.2); };
   mx.st.play().catch(() => { mx.sting = false; });
-  ramp(mx.st, (mx.narr ? c.narrationVol : c.pauseVol) * mx.master, c.fadeIn);
+  ramp(mx.st, (mx.narr ? c.narrationVol : c.pauseVol) * (c.gain || 1) * mx.master, c.fadeIn);
 }
 function stopMusic(hard) {
   for (const el of [mx.a, mx.b, mx.st]) ramp(el, 0, hard ? 0.3 : 1.2);
@@ -176,6 +185,7 @@ function step() {
   document.getElementById('s-img').src = BEATS[i].src;
   document.getElementById('s-txt').textContent = BEATS[i].text;
   applyPlan(BEATS[i].music, false);
+  prewarm();
   if (BEATS[i].audio) {
     // The bed dips first; the Chronicler enters on settled ground.
     mx.narr = true; reduck(0.7);
@@ -206,6 +216,13 @@ if (btn) btn.addEventListener('click', e => {
 document.getElementById('mtoggle').addEventListener('click', e => { e.stopPropagation(); mtoggle(); });
 player.addEventListener('ended', () => {
   mx.narr = false;
+  if (i === BEATS.length - 1) {
+    // The last words are spoken: let the score hold the room a moment,
+    // then close the hearth softly on its own.
+    reduck(1.6);
+    setTimeout(() => { if (i === BEATS.length - 1) { stopMusic(false); leave(); } }, 4200);
+    return;
+  }
   // Peek at the next beat: if its plan changes the music, the old cue
   // fades right away — never a swell of the outgoing piece at the seam.
   const nxt = (i >= 0 && i + 1 < BEATS.length) ? BEATS[i + 1].music : null;

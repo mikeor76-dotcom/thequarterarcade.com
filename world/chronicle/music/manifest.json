@@ -1,5 +1,6 @@
 {
- "version": 1,
+ "version": 2,
+ "planVersion": 2,
  "cues": {
   "chronicle-opening": {
    "file": "chronicle-opening.mp3",
@@ -31,7 +32,9 @@
    "enabled": true,
    "notes": "Mandatory once, first beat, never elsewhere.",
    "duration": 9.84,
-   "url": "/world/chronicle/music/chronicle-opening.mp3"
+   "url": "/world/chronicle/music/chronicle-opening.mp3",
+   "loudnessDb": -16.83,
+   "gain": 1.027
   },
   "exploration-discovery": {
    "file": "exploration-discovery.mp3",
@@ -67,7 +70,9 @@
    "enabled": true,
    "notes": "The default bed. Loop seam unverified \u2014 crossfade loop.",
    "duration": 25.32,
-   "url": "/world/chronicle/music/exploration-discovery.mp3"
+   "url": "/world/chronicle/music/exploration-discovery.mp3",
+   "loudnessDb": -15.33,
+   "gain": 0.864
   },
   "mystery-unease": {
    "file": "mystery-unease.mp3",
@@ -101,7 +106,9 @@
    "enabled": true,
    "notes": "Low bed; happy to run long under several beats.",
    "duration": 19.728,
-   "url": "/world/chronicle/music/mystery-unease.mp3"
+   "url": "/world/chronicle/music/mystery-unease.mp3",
+   "loudnessDb": -16.61,
+   "gain": 1.001
   },
   "danger-rising": {
    "file": "danger-rising.mp3",
@@ -134,7 +141,9 @@
    "enabled": true,
    "notes": "Belongs BEFORE battle, not under ordinary exploration.",
    "duration": 13.032,
-   "url": "/world/chronicle/music/danger-rising.mp3"
+   "url": "/world/chronicle/music/danger-rising.mp3",
+   "loudnessDb": -14.71,
+   "gain": 0.804
   },
   "battle": {
    "file": "battle.mp3",
@@ -166,7 +175,9 @@
    "enabled": true,
    "notes": "Selective. Ducked hard: narration always wins.",
    "duration": 24.24,
-   "url": "/world/chronicle/music/battle.mp3"
+   "url": "/world/chronicle/music/battle.mp3",
+   "loudnessDb": -16.36,
+   "gain": 0.973
   },
   "heroic-moment": {
    "file": "heroic-moment.mp3",
@@ -195,7 +206,9 @@
    "enabled": true,
    "notes": "One-shot punctuation over the bed; bed survives it.",
    "duration": 9.48,
-   "url": "/world/chronicle/music/heroic-moment.mp3"
+   "url": "/world/chronicle/music/heroic-moment.mp3",
+   "loudnessDb": -16.69,
+   "gain": 1.01
   },
   "comedic-failure": {
    "file": "comedic-failure.mp3",
@@ -223,7 +236,9 @@
    "enabled": true,
    "notes": "Dry humor: land it once; twice only if the day earned it.",
    "duration": 9.12,
-   "url": "/world/chronicle/music/comedic-failure.mp3"
+   "url": "/world/chronicle/music/comedic-failure.mp3",
+   "loudnessDb": -16.92,
+   "gain": 1.038
   },
   "narrow-escape": {
    "file": "narrow-escape.mp3",
@@ -251,7 +266,9 @@
    "enabled": true,
    "notes": "Scene-ending cue; often the right way OUT of battle.",
    "duration": 9.84,
-   "url": "/world/chronicle/music/narrow-escape.mp3"
+   "url": "/world/chronicle/music/narrow-escape.mp3",
+   "loudnessDb": -17.34,
+   "gain": 1.089
   },
   "victory": {
    "file": "victory.mp3",
@@ -281,7 +298,78 @@
    "enabled": true,
    "notes": "Under the END of a successful beat; earn it first.",
    "duration": 19.92,
-   "url": "/world/chronicle/music/victory.mp3"
+   "url": "/world/chronicle/music/victory.mp3",
+   "loudnessDb": -16.6,
+   "gain": 1.0
+  },
+  "legendary-discovery": {
+   "file": "legendary-discovery.mp3",
+   "name": "Legendary Discovery",
+   "role": "season-defining revelation",
+   "moods": [
+    "legendary",
+    "awe",
+    "wonder",
+    "discovery"
+   ],
+   "intensity": 0.55,
+   "sting": false,
+   "loopMode": "none",
+   "minPlay": 8.0,
+   "minImportance": 0.75,
+   "narrationVol": 0.26,
+   "pauseVol": 0.5,
+   "fadeIn": 0.6,
+   "fadeOut": 2.6,
+   "baseWeight": 1.0,
+   "repeatPenalty": 0.0,
+   "cooldownScenes": 3,
+   "cooldownEpisodes": 1,
+   "maxUses": 1,
+   "isSignatureCue": false,
+   "compatibleNext": [
+    "mystery-unease",
+    "exploration-discovery",
+    "victory"
+   ],
+   "enabled": true,
+   "notes": "Featured once for a genuinely rare find; importance-gated so plain 'discovery' beats never borrow it.",
+   "duration": 14.52,
+   "url": "/world/chronicle/music/legendary-discovery.mp3",
+   "loudnessDb": -16.53,
+   "gain": 0.992
+  },
+  "chronicle-closing": {
+   "file": "chronicle-closing.mp3",
+   "name": "The Chronicle Closes",
+   "role": "conclusion + tomorrow's tease",
+   "moods": [
+    "ending",
+    "resolution",
+    "tomorrow",
+    "mystery"
+   ],
+   "intensity": 0.45,
+   "sting": false,
+   "loopMode": "none",
+   "minPlay": 8.0,
+   "narrationVol": 0.3,
+   "pauseVol": 0.58,
+   "fadeIn": 0.6,
+   "fadeOut": 3.0,
+   "baseWeight": 1.0,
+   "repeatPenalty": 0.0,
+   "cooldownScenes": 99,
+   "cooldownEpisodes": 0,
+   "maxUses": 1,
+   "isSignatureCue": true,
+   "compatibleNext": [],
+   "enabled": true,
+   "notes": "Once, under the final beat \u2014 unless the day ends mid-battle, in silence, or under a victory that owns the ending.",
+   "duration": 14.352,
+   "url": "/world/chronicle/music/chronicle-closing.mp3",
+   "loudnessDb": -19.34,
+   "gain": 1.371
   },
   "tavern-rumor": {
    "file": "tavern-rumor.mp3",
@@ -314,7 +402,9 @@
    "enabled": true,
    "notes": "Also a fine transitional cue between chapters of the day.",
    "duration": 16.032,
-   "url": "/world/chronicle/music/tavern-rumor.mp3"
+   "url": "/world/chronicle/music/tavern-rumor.mp3",
+   "loudnessDb": -16.53,
+   "gain": 0.992
   }
  }
 }

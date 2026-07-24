@@ -66,11 +66,13 @@
    "intensity": 0.4,
    "importance": 0.4,
    "music": {
-    "bed": "battle",
-    "bedAction": "continue",
+    "bed": "chronicle-closing",
+    "bedAction": "crossfade",
     "bedNext": null,
     "sting": null
    }
   }
- ]
+ ],
+ "music_version": 2,
+ "music_seed": "2026-07-23:v2"
 }
