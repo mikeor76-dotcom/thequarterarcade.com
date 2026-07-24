@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-24T14:06:54",
+	"generated_at": "2026-07-24T16:13:45",
 	"notables": [
 		{
 			"actor": {
@@ -262,6 +262,41 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 4.5,
+				"crew_size": 1,
+				"deaths": 4,
+				"kills": 25,
+				"level_time": 164.630767333355,
+				"meter_after": 13.3,
+				"victory": false
+			},
+			"day": 2,
+			"id": "evt_1784924025_0051",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1784924022_defeat.png",
+						"tag": "defeat"
+					}
+				],
+				"shot": "shot_1784924023.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-03",
+			"text": "MIKE's company returns from Chapter 3 with 25 kills. The meter climbs to 13%.",
+			"ts": "2026-07-24T16:13:45",
+			"type": "run.completed",
+			"unix": 1784924025,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -878,46 +913,17 @@
 			"unix": 1784851720.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "MIKE"
-			},
-			"data": {
-				"boss_hp_pct": -1.0,
-				"contribution": 4.2,
-				"crew_size": 1.0,
-				"deaths": 1.0,
-				"kills": 22.0,
-				"level_time": 83.0164553333302,
-				"meter_after": 24.2,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784851120_3068",
-			"media": {
-				"shot": "shot_1784851119.png"
-			},
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-02",
-			"text": "MIKE's company returns from Chapter 2 with 22 kills. The meter climbs to 24%.",
-			"ts": "2026-07-23T19:58:40",
-			"type": "run.completed",
-			"unix": 1784851120.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 3,
-		"day_meter_gain": 74.3,
-		"day_runs": 14,
+		"day_meter_gain": 78.8,
+		"day_runs": 15,
 		"last_day": 2,
-		"meter": 8.8,
+		"meter": 13.3,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 628,
-		"total_runs": 53
+		"total_kills": 653,
+		"total_runs": 54
 	}
 }
