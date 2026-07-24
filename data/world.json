@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-23T21:50:11",
+	"generated_at": "2026-07-23T22:42:07",
 	"notables": [
 		{
 			"actor": {
@@ -197,6 +197,41 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 2.5,
+				"crew_size": 1,
+				"deaths": 1,
+				"kills": 5,
+				"level_time": 41.265968666668,
+				"meter_after": 61.4,
+				"victory": false
+			},
+			"day": 2,
+			"id": "evt_1784860927_9047",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1784860923_defeat.png",
+						"tag": "defeat"
+					}
+				],
+				"shot": "shot_1784860925.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-02",
+			"text": "MIKE's company returns from Chapter 2 with 5 kills. The meter climbs to 61%.",
+			"ts": "2026-07-23T22:42:07",
+			"type": "run.completed",
+			"unix": 1784860927,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -731,46 +766,17 @@
 			"unix": 1784844346.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "MIKE"
-			},
-			"data": {
-				"boss_hp_pct": -1.0,
-				"contribution": 2.0,
-				"crew_size": 1.0,
-				"deaths": 1.0,
-				"kills": 0.0,
-				"level_time": 36.679335666666,
-				"meter_after": 87.7,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784844111_3086",
-			"media": {
-				"shot": "shot_1784844109.png"
-			},
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-01",
-			"text": "MIKE's company returns from Chapter 1 with 0 kills. The meter climbs to 87%.",
-			"ts": "2026-07-23T18:01:51",
-			"type": "run.completed",
-			"unix": 1784844111.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 2.0,
-		"day_meter_gain": 24.4,
-		"day_runs": 3,
+		"day_meter_gain": 26.9,
+		"day_runs": 4,
 		"last_day": 2,
-		"meter": 58.9,
+		"meter": 61.4,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 449,
-		"total_runs": 42
+		"total_kills": 454,
+		"total_runs": 43
 	}
 }
