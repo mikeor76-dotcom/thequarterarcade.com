@@ -1,5 +1,5 @@
 {
-	"generated_at": "2026-07-24T13:24:57",
+	"generated_at": "2026-07-24T13:34:52",
 	"notables": [
 		{
 			"actor": {
@@ -197,6 +197,41 @@
 		}
 	],
 	"recent": [
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1,
+				"contribution": 6.4,
+				"crew_size": 2,
+				"deaths": 8,
+				"kills": 44,
+				"level_time": 79.0209746666634,
+				"meter_after": 86.3,
+				"victory": false
+			},
+			"day": 2,
+			"id": "evt_1784914492_8962",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1784914489_defeat.png",
+						"tag": "defeat"
+					}
+				],
+				"shot": "shot_1784914491.png"
+			},
+			"prominence": "entry",
+			"season": 1,
+			"site": "chapter-02",
+			"text": "MIKE's company returns from Chapter 2 with 44 kills. The meter climbs to 86%.",
+			"ts": "2026-07-24T13:34:52",
+			"type": "run.completed",
+			"unix": 1784914492,
+			"v": 1,
+			"vod": null
+		},
 		{
 			"actor": {
 				"player": "MIKE"
@@ -800,46 +835,17 @@
 			"unix": 1784849345.0,
 			"v": 1.0,
 			"vod": null
-		},
-		{
-			"actor": {
-				"player": "MIKE"
-			},
-			"data": {
-				"boss_hp_pct": -1.0,
-				"contribution": 4.6,
-				"crew_size": 1.0,
-				"deaths": 1.0,
-				"kills": 26.0,
-				"level_time": 90.8671453333295,
-				"meter_after": 11.2,
-				"victory": false
-			},
-			"day": 1.0,
-			"id": "evt_1784848203_6497",
-			"media": {
-				"shot": "shot_1784848202.png"
-			},
-			"prominence": "entry",
-			"season": 1.0,
-			"site": "chapter-02",
-			"text": "MIKE's company returns from Chapter 2 with 26 kills. The meter climbs to 11%.",
-			"ts": "2026-07-23T19:10:03",
-			"type": "run.completed",
-			"unix": 1784848203.0,
-			"v": 1.0,
-			"vod": null
 		}
 	],
 	"state": {
 		"chapter": 2.0,
-		"day_meter_gain": 45.4,
-		"day_runs": 12,
+		"day_meter_gain": 51.8,
+		"day_runs": 13,
 		"last_day": 2,
-		"meter": 79.9,
+		"meter": 86.3,
 		"season": 1.0,
 		"season_start_unix": 1784768401.0,
-		"total_kills": 479,
-		"total_runs": 51
+		"total_kills": 523,
+		"total_runs": 52
 	}
 }
