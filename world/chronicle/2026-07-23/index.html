@@ -64,24 +64,141 @@
     Come write tomorrow's page. <a href="/visit/">about visiting →</a></p>
   </section>
 </div>
-<div id="show"><img id="s-img"><p id="s-txt"></p><div class="hint">click: next · esc: leave the hearth</div></div>
+<div id="show"><img id="s-img"><p id="s-txt"></p>
+<div class="hint">click: next · esc: leave the hearth · <span id="mtoggle" style="cursor:pointer"></span></div></div>
 <script>
-const BEATS = [{"text": "MIKE went down alone again today, same as every day this week. No banners, no second company at his back, just one man walking into Chapter 1 over and over until the walking became the whole story. The meter crept up in small, stubborn steps: seven, nine, eleven.", "src": "/world/chronicle/art/warrior.png", "audio": "/world/chronicle/2026-07-23/beat-0.mp3"}, {"text": "Then the ground shook and the Bone Marshal fell, cut down twice more before the sun set on Chapter 1. The meter surged each time like a held breath let go. By day's end the book of that chapter closed for good, one hundred percent, and the town felt it turn.", "src": "/data/shots/shot_1784835828.png", "audio": "/world/chronicle/2026-07-23/beat-1.mp3"}, {"text": "Chapter 2 opened and MIKE did not rest. He walked back in the same evening, kills climbing in fistfuls this time, twenty, then twenty-six, then thirty-four, the meter answering him step for step.", "src": "/data/shots/shot_1784849344.png", "audio": "/world/chronicle/2026-07-23/beat-2.mp3"}, {"text": "By the day's last run the Bone Marshal rose again in this new chapter, and MIKE put him down a third time. The meter jumped clean to its halfway mark. Two chapters now know his name, and thirty-one companies still lie underground behind him, waiting their turn.", "src": "/data/shots/shot_1784855832.png", "audio": "/world/chronicle/2026-07-23/beat-3.mp3"}, {"text": "Chapter 2 stands half-written, the Marshal's ashes still warm. Whether MIKE walks alone again tomorrow, or whether the town finally sends more hands to the door, the Chronicler cannot yet say. He only knows the pen stays sharp.", "src": "/world/chronicle/art/marshal.png", "audio": "/world/chronicle/2026-07-23/beat-4.mp3"}];
+const BEATS = [{"text": "MIKE went down alone again today, same as every day this week. No banners, no second company at his back, just one man walking into Chapter 1 over and over until the walking became the whole story. The meter crept up in small, stubborn steps: seven, nine, eleven.", "src": "/world/chronicle/art/warrior.png", "audio": "/world/chronicle/2026-07-23/beat-0.mp3", "music": {"bed": "chronicle-opening", "bedAction": "start", "bedNext": "exploration-discovery", "sting": null}}, {"text": "Then the ground shook and the Bone Marshal fell, cut down twice more before the sun set on Chapter 1. The meter surged each time like a held breath let go. By day's end the book of that chapter closed for good, one hundred percent, and the town felt it turn.", "src": "/data/shots/shot_1784835828.png", "audio": "/world/chronicle/2026-07-23/beat-1.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "Chapter 2 opened and MIKE did not rest. He walked back in the same evening, kills climbing in fistfuls this time, twenty, then twenty-six, then thirty-four, the meter answering him step for step.", "src": "/data/shots/shot_1784849344.png", "audio": "/world/chronicle/2026-07-23/beat-2.mp3", "music": {"bed": "exploration-discovery", "bedAction": "continue", "bedNext": null, "sting": null}}, {"text": "By the day's last run the Bone Marshal rose again in this new chapter, and MIKE put him down a third time. The meter jumped clean to its halfway mark. Two chapters now know his name, and thirty-one companies still lie underground behind him, waiting their turn.", "src": "/data/shots/shot_1784855832.png", "audio": "/world/chronicle/2026-07-23/beat-3.mp3", "music": {"bed": "battle", "bedAction": "crossfade", "bedNext": null, "sting": null}}, {"text": "Chapter 2 stands half-written, the Marshal's ashes still warm. Whether MIKE walks alone again tomorrow, or whether the town finally sends more hands to the door, the Chronicler cannot yet say. He only knows the pen stays sharp.", "src": "/world/chronicle/art/marshal.png", "audio": "/world/chronicle/2026-07-23/beat-4.mp3", "music": {"bed": "battle", "bedAction": "continue", "bedNext": null, "sting": null}}];
+const CUES = {"chronicle-opening": {"url": "/world/chronicle/music/chronicle-opening.mp3", "duration": 9.84, "loopMode": "none", "narrationVol": 0.34, "pauseVol": 0.6, "fadeIn": 0.2, "fadeOut": 2.2, "sting": false}, "battle": {"url": "/world/chronicle/music/battle.mp3", "duration": 24.24, "loopMode": "crossfade", "narrationVol": 0.18, "pauseVol": 0.4, "fadeIn": 0.8, "fadeOut": 1.8, "sting": false}, "exploration-discovery": {"url": "/world/chronicle/music/exploration-discovery.mp3", "duration": 25.32, "loopMode": "crossfade", "narrationVol": 0.22, "pauseVol": 0.45, "fadeIn": 1.6, "fadeOut": 2.4, "sting": false}};
 const show = document.getElementById('show');
 let i = -1, player = new Audio();
+
+/* ---- the score: two bed decks (for crossfades), one sting deck. ----
+   The build-time plan in BEATS[i].music is EXECUTED here, never chosen.
+   All playback begins inside the user's LISTEN click. If anything about
+   the music fails, narration continues and silence is the fallback. */
+const mx = {
+  a: new Audio(), b: new Audio(), st: new Audio(), live: 'a',
+  bed: null, ramps: [], dead: new Set(), narr: false, sting: false,
+  master: 1.0, off: localStorage.getItem('chron.music') === 'off',
+  tick: null, looping: false,
+};
+for (const el of [mx.a, mx.b, mx.st]) { el.preload = 'none'; el.volume = 0; }
+function cue(id) { return (id && CUES[id] && !mx.dead.has(id)) ? CUES[id] : null; }
+function bedTarget() {
+  const c = cue(mx.bed);
+  if (!c || mx.off) return 0;
+  let v = mx.narr ? c.narrationVol : c.pauseVol;
+  if (mx.sting) v *= 0.5;               // stings own the moment
+  return v * mx.master;
+}
+function ramp(el, to, dur) {
+  mx.ramps = mx.ramps.filter(r => r.el !== el);
+  mx.ramps.push({el, from: el.volume, to, t0: performance.now(), dur: Math.max(dur, 0.05) * 1000});
+}
+function mixTick() {
+  const now = performance.now();
+  mx.ramps = mx.ramps.filter(r => {
+    const t = Math.min(1, (now - r.t0) / r.dur);
+    // Equal-power shaping: rises follow sin, falls follow cos.
+    const s = r.to > r.from ? Math.sin(t * Math.PI / 2) : 1 - Math.cos(t * Math.PI / 2);
+    r.el.volume = Math.max(0, Math.min(1, r.from + (r.to - r.from) * s));
+    if (t >= 1 && r.to === 0) r.el.pause();
+    return t < 1;
+  });
+  // Bed self-crossfade: loop a cue into itself before its seam shows.
+  const c = cue(mx.bed), el = mx[mx.live];
+  if (c && c.loopMode === 'crossfade' && el.duration > 0 &&
+      el.duration - el.currentTime < 1.6 && !mx.looping) {
+    mx.looping = true;
+    const idle = mx[mx.live === 'a' ? 'b' : 'a'];
+    idle.src = c.url; idle.currentTime = 0;
+    idle.play().catch(() => {});
+    ramp(idle, bedTarget(), 1.5); ramp(el, 0, 1.5);
+    mx.live = mx.live === 'a' ? 'b' : 'a';
+    setTimeout(() => mx.looping = false, 2000);
+  }
+}
+function reduck(dur) { const el = mx[mx.live]; if (mx.bed) ramp(el, bedTarget(), dur || 0.8); }
+function setBed(id, action, fresh) {
+  if (action === 'continue' && id === mx.bed) { reduck(0.8); return; }
+  const old = mx[mx.live], oc = cue(mx.bed);
+  if (!id || action === 'stop' || !cue(id)) {
+    if (mx.bed) ramp(old, 0, oc ? oc.fadeOut : 1.5);
+    mx.bed = null; return;
+  }
+  const c = cue(id);
+  const next = mx[mx.live === 'a' ? 'b' : 'a'];
+  if (mx.bed) ramp(old, 0, oc ? oc.fadeOut : 1.5);   // outgoing half
+  next.src = c.url; next.currentTime = 0;
+  next.onerror = () => { mx.dead.add(id); if (mx.bed === id) mx.bed = null; };
+  next.onended = () => {
+    if (mx.bed !== id) return;
+    const plan = (i >= 0 && BEATS[i].music) || {};
+    if (c.loopMode === 'none' && plan.bedNext && cue(plan.bedNext))
+      setBed(plan.bedNext, 'start');
+    else if (c.loopMode === 'none') mx.bed = null;
+  };
+  next.play().catch(() => {});
+  mx.live = mx.live === 'a' ? 'b' : 'a';
+  mx.bed = id;
+  ramp(next, bedTarget(), fresh ? c.fadeIn : Math.max(c.fadeIn, 1.2));
+}
+function playSting(id) {
+  const c = cue(id);
+  if (!c || mx.off) return;
+  mx.st.src = c.url; mx.st.currentTime = 0;
+  mx.st.volume = 0; mx.sting = true; reduck(0.5);
+  mx.st.onended = mx.st.onerror = () => { mx.sting = false; reduck(1.2); };
+  mx.st.play().catch(() => { mx.sting = false; });
+  ramp(mx.st, (mx.narr ? c.narrationVol : c.pauseVol) * mx.master, c.fadeIn);
+}
+function stopMusic(hard) {
+  for (const el of [mx.a, mx.b, mx.st]) ramp(el, 0, hard ? 0.3 : 1.2);
+  mx.bed = null; mx.sting = false;
+}
+function mtoggle() {
+  mx.off = !mx.off;
+  localStorage.setItem('chron.music', mx.off ? 'off' : 'on');
+  document.getElementById('mtoggle').textContent = mx.off ? '♪ music: off' : '♪ music: on';
+  if (mx.off) stopMusic(false); else if (i >= 0) applyPlan(BEATS[i].music, true);
+  reduck(0.8);
+}
+function applyPlan(plan, rejoin) {
+  if (!plan) return;
+  if (!mx.off) setBed(plan.bed, rejoin ? 'start' : plan.bedAction, i === 0);
+  if (plan.sting && !rejoin) playSting(plan.sting);
+}
+/* --------------------------------------------------------------- */
 function step() {
   i++;
   if (i >= BEATS.length) return leave();
   document.getElementById('s-img').src = BEATS[i].src;
   document.getElementById('s-txt').textContent = BEATS[i].text;
-  if (BEATS[i].audio) { player.src = BEATS[i].audio; player.play(); }
+  applyPlan(BEATS[i].music, false);
+  if (BEATS[i].audio) {
+    // The bed dips first; the Chronicler enters on settled ground.
+    mx.narr = true; reduck(0.7);
+    player.src = BEATS[i].audio;
+    setTimeout(() => player.play().catch(() => {}), i === 0 ? 900 : 350);
+  } else { mx.narr = false; reduck(1.2); }
 }
-function leave() { show.classList.remove('on'); player.pause(); i = -1; }
+function leave() {
+  show.classList.remove('on'); player.pause(); stopMusic(true);
+  mx.narr = false; i = -1;
+  if (mx.tick) { clearInterval(mx.tick); mx.tick = null; }
+}
 const btn = document.getElementById('listen');
 if (btn) btn.addEventListener('click', e => {
-  e.preventDefault(); show.classList.add('on'); i = -1; step();
+  e.preventDefault();
+  if (show.classList.contains('on')) return;   // no double-start
+  show.classList.add('on'); i = -1;
+  document.getElementById('mtoggle').textContent = mx.off ? '♪ music: off' : '♪ music: on';
+  if (!mx.tick) mx.tick = setInterval(mixTick, 50);
+  step();
 });
-player.addEventListener('ended', step);
+document.getElementById('mtoggle').addEventListener('click', e => { e.stopPropagation(); mtoggle(); });
+player.addEventListener('ended', () => { mx.narr = false; reduck(1.4); setTimeout(() => { if (i >= 0 && !mx.narr) step(); }, 1200); });
+player.addEventListener('pause', () => { if (i >= 0 && !player.ended) { mx.narr = false; reduck(1.0); } });
 show.addEventListener('click', () => { if (i >= 0) step(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') leave(); });
 </script>
