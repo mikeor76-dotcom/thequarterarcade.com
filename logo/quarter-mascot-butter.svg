@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+  <title>The Quarter — mascot, cream body, butter feet</title>
+  <rect x="14" y="14" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="42" y="14" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="14" y="24" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="24" y="24" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="34" y="24" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="42" y="24" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="14" y="34" width="8" height="8" fill="#FBF6EA"></rect>
+  <rect x="24" y="34" width="8" height="8" fill="#FBF6EA"></rect>
+  <rect x="34" y="34" width="8" height="8" fill="#FBF6EA"></rect>
+  <rect x="42" y="34" width="8" height="8" fill="#FBF6EA"></rect>
+  <rect x="24" y="44" width="8" height="8" fill="#FFC24A"></rect>
+  <rect x="34" y="44" width="8" height="8" fill="#FFC24A"></rect>
+</svg>

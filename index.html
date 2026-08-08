@@ -8,90 +8,187 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Martian+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+
+<!-- ── Shared SVG symbols (Q mark + Amber Fox variants) ─────── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark-q" viewBox="0 0 50 50">
+      <circle cx="19" cy="19" r="15" fill="none" stroke="currentColor" stroke-width="4"/>
+      <line x1="23" y1="23" x2="34" y2="34" stroke="currentColor" stroke-width="4"/>
+      <circle cx="38" cy="38" r="5.5" fill="#FF6F5E"/>
+    </symbol>
+    <!-- Amber Fox — coral outer, grape chest (default, for light grounds) -->
+    <symbol id="mascot-fox" viewBox="0 0 64 64">
+      <rect x="14" y="14" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="42" y="14" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="14" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="24" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="34" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="42" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="14" y="34" width="8" height="8" fill="#241B33"/>
+      <rect x="24" y="34" width="8" height="8" fill="#241B33"/>
+      <rect x="34" y="34" width="8" height="8" fill="#241B33"/>
+      <rect x="42" y="34" width="8" height="8" fill="#241B33"/>
+      <rect x="24" y="44" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="34" y="44" width="8" height="8" fill="#FF6F5E"/>
+    </symbol>
+    <!-- Coral outer, cream chest — for grape / dark grounds -->
+    <symbol id="mascot-fox-cream" viewBox="0 0 64 64">
+      <rect x="14" y="14" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="42" y="14" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="14" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="24" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="34" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="42" y="24" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="14" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="34" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="42" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="44" width="8" height="8" fill="#FF6F5E"/>
+      <rect x="34" y="44" width="8" height="8" fill="#FF6F5E"/>
+    </symbol>
+    <symbol id="mascot-fox-aqua" viewBox="0 0 64 64">
+      <rect x="14" y="14" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="42" y="14" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="14" y="24" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="24" y="24" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="34" y="24" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="42" y="24" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="14" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="34" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="42" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="44" width="8" height="8" fill="#2FBDAC"/>
+      <rect x="34" y="44" width="8" height="8" fill="#2FBDAC"/>
+    </symbol>
+    <symbol id="mascot-fox-butter" viewBox="0 0 64 64">
+      <rect x="14" y="14" width="8" height="8" fill="#FFC24A"/>
+      <rect x="42" y="14" width="8" height="8" fill="#FFC24A"/>
+      <rect x="14" y="24" width="8" height="8" fill="#FFC24A"/>
+      <rect x="24" y="24" width="8" height="8" fill="#FFC24A"/>
+      <rect x="34" y="24" width="8" height="8" fill="#FFC24A"/>
+      <rect x="42" y="24" width="8" height="8" fill="#FFC24A"/>
+      <rect x="14" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="34" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="42" y="34" width="8" height="8" fill="#FBF6EA"/>
+      <rect x="24" y="44" width="8" height="8" fill="#FFC24A"/>
+      <rect x="34" y="44" width="8" height="8" fill="#FFC24A"/>
+    </symbol>
+  </defs>
+</svg>
+
 <div class="scanlines"></div>
 <div class="vignette"></div>
 
+<!-- NAV -->
 <nav class="nav">
   <a class="brand" href="/">
-    <svg width="28" height="28" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#ffb300"/><rect x="1" y="1" width="6" height="1" fill="#ffb300"/><rect x="0" y="2" width="8" height="4" fill="#ffb300"/><rect x="1" y="6" width="6" height="1" fill="#ffb300"/><rect x="2" y="7" width="4" height="1" fill="#ffb300"/><rect x="3" y="2" width="2" height="4" fill="#8a5a00"/><rect x="2" y="3" width="1" height="2" fill="#8a5a00"/><rect x="5" y="3" width="1" height="2" fill="#8a5a00"/></svg>
-    <span>THE QUARTER</span>
+    <svg width="42" height="42" style="color: #FBF6EA"><use href="#mark-q"/></svg>
+    <span class="wordmark">THE QUARTER</span>
   </a>
   <div class="links">
     <a href="/game/">The Game</a>
     <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
-    <span class="insert-coin">INSERT COIN</span>
+    <span class="insert-coin">Insert Coin</span>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="section" style="text-align: center; padding-top: 88px; padding-bottom: 72px;">
-  <div class="badge" style="margin-bottom: 36px;">ONE WORLD &nbsp;·&nbsp; ONE RUN A DAY &nbsp;·&nbsp; NOTHING RESETS</div>
-  <h1 class="pixel-title" style="margin-bottom: 28px;">THE<br>QUARTER</h1>
-  <p class="lede" style="max-width: 620px; margin: 0 auto 44px; font-size: 27px;">A retro arcade,
-  built from scratch in a small New England town — and inside it, a world that never resets.</p>
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-    <a class="btn" href="/world/">▶ WATCH THE LIVE WORLD</a>
-    <a class="btn ghost" href="/devlog/">FOLLOW THE BUILD</a>
+<header class="section" style="text-align: center; padding-top: 96px; padding-bottom: 56px; position: relative;">
+  <div class="max">
+    <div class="kicker" style="margin-bottom: 40px;">
+      <span class="rule-h"></span>
+      One World <span class="diamond">◆</span> One Run a Day <span class="diamond">◆</span> Nothing Resets
+      <span class="rule-h"></span>
+    </div>
+    <h1 class="display">
+      THE<br>QUARTER
+      <span class="underline"></span>
+    </h1>
+    <p class="lede" style="max-width: 640px; margin: 32px auto 0;">
+      A retro arcade — built from scratch in a small New England town —
+      and inside it, <em>a world that never resets.</em>
+    </p>
+    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 40px; flex-wrap: wrap;">
+      <a class="btn primary" href="/world/"><span class="play-tri"></span>Watch the Live World</a>
+      <a class="btn ghost" href="/devlog/">Follow the Build</a>
+    </div>
+    <div class="press-start" style="margin-top: 56px;">
+      <span class="blink">▼</span> Press Start <span class="blink">▼</span>
+    </div>
   </div>
-  <div class="press-start" style="margin-top: 56px;">▼ PRESS START ▼</div>
 </header>
 
-<!-- LIVE WORLD BAND -->
-<section class="band" style="position: relative; z-index: 5; border-top: 3px solid var(--line); border-bottom: 3px solid var(--line); background: var(--panel); padding: 56px 32px 0;">
+<!-- PATTERN BAND -->
+<div class="pattern-band" aria-hidden="true">
+  <div class="pattern-run">
+    <script>document.write(Array.from({length: 2}, () => Array.from({length: 22}, (_, i) => i % 2 === 0
+      ? '<svg width="26" height="26"><use href="#mark-q"/></svg>'
+      : '<svg width="26" height="26"><use href="#mascot-fox-cream"/></svg>'
+    ).join('')).join(''));</script>
+  </div>
+</div>
+
+<!-- LIVE WORLD BAND (screen module) -->
+<section class="section band">
   <div class="max">
-    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 40px; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 36px; flex-wrap: wrap; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: rgba(251,246,234,0.55); text-transform: uppercase;">
       <span class="live-dot"></span>
-      <span class="pixel" style="font-size: 12px; color: #ff6b6b;">LIVE</span>
-      <span class="pixel" style="font-size: 16px; color: #f2f2ff;">THE BURY</span>
-      <span id="worldTag" style="font-size: 20px; color: var(--dim); margin-left: auto;">development world</span>
+      <span class="pixel" style="font-size: 10px; color: #FF6F5E;">LIVE</span>
+      <span style="font-family: var(--display); font-weight: 800; font-size: 15px; color: #FBF6EA; letter-spacing: 0.06em;">The Bury</span>
+      <span id="worldTag" style="margin-left: auto;">development world</span>
     </div>
 
-    <div class="grid-2" style="padding-bottom: 48px;">
-      <div style="display: flex; flex-direction: column; gap: 28px;">
-        <div style="display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;">
-          <div>
-            <div style="font-size: 21px; color: var(--dim); letter-spacing: 2px;">CURRENT CHAPTER</div>
-            <div class="frontier-num" id="lvNum">CH --</div>
-          </div>
-          <div style="font-size: 24px; color: var(--body);">of 25<br><span style="color: var(--dim); font-size: 20px;">the town writes it together</span></div>
-        </div>
+    <div class="grid-2" style="padding-bottom: 8px;">
+      <div style="display: flex; flex-direction: column; gap: 32px;">
         <div>
-          <div style="display: flex; justify-content: space-between; font-size: 20px; color: var(--dim); margin-bottom: 8px; flex-wrap: wrap;">
-            <span id="meterLabel">LEVEL METER</span><span style="color: var(--green);" id="meterPct">--% — every run moves it</span>
+          <div class="stat-label">Current Chapter</div>
+          <div class="frontier-num" id="lvNum" style="margin-top: 6px;">CH --</div>
+          <div style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: rgba(251,246,234,0.5); text-transform: uppercase; margin-top: 6px;">
+            of 25 · the town writes it together
+          </div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: rgba(251,246,234,0.55); text-transform: uppercase; margin-bottom: 10px;">
+            <span id="meterLabel">Level Meter</span>
+            <span id="meterPct" style="color: #2FBDAC;">--% — every run moves it</span>
           </div>
           <div class="seg-track" id="segs"></div>
         </div>
-        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
-          <div><div class="stat-num" id="statRuns">—</div><div class="stat-label">runs this season</div></div>
-          <div><div class="stat-num" id="statKills">—</div><div class="stat-label">skeletons re-killed</div></div>
-          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label">chapters written forever</div></div>
+
+        <div style="display: flex; gap: 48px; flex-wrap: wrap;">
+          <div><div class="stat-num" id="statRuns">—</div><div class="stat-label" style="margin-top: 8px;">Runs this Season</div></div>
+          <div><div class="stat-num" id="statKills">—</div><div class="stat-label" style="margin-top: 8px;">Skeletons Re-killed</div></div>
+          <div><div class="stat-num" id="statFallen">—</div><div class="stat-label" style="margin-top: 8px;">Chapters Written Forever</div></div>
         </div>
       </div>
 
-      <div class="panel deep" style="padding: 24px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
-          <span class="pixel" style="font-size: 12px; color: var(--amber);">THE LEDGER</span>
-          <span style="font-size: 18px; color: var(--dim);">the Chronicler records all</span>
+      <aside class="panel deep" style="padding: 24px 24px 20px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+          <span class="pixel" style="font-size: 10px; color: #FFC24A; letter-spacing: 0.10em;">THE LEDGER</span>
+          <span style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; color: rgba(251,246,234,0.45); text-transform: uppercase;">The Chronicler Records All</span>
         </div>
         <div class="ledger" id="homeLedger">
           <div class="entry"><span class="x hint">— the world is quiet · no ledger data yet —</span></div>
         </div>
-        <div style="margin-top: 16px; font-size: 20px;"><a href="/world/">full ledger →</a></div>
-      </div>
+        <div style="margin-top: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;"><a href="/world/" style="color: #FF6F5E;">full ledger →</a></div>
+      </aside>
     </div>
 
-    <a id="chronCard" href="/world/chronicle/" style="display: none; margin: 0 0 48px; border: 2px solid var(--line); padding: 18px 22px; text-decoration: none; gap: 20px; align-items: center;">
+    <a id="chronCard" href="/world/chronicle/" style="display: none; margin: 40px 0 0; border: 1px solid var(--rule); padding: 18px 22px; text-decoration: none; gap: 20px; align-items: center; background: var(--deep);">
       <img id="chronImg" src="" alt="" style="height: 84px;">
       <span>
-        <span class="pixel" style="font-size: 11px; color: var(--amber);">THE DAILY CHRONICLE</span><br>
-        <span id="chronTitle" style="font-size: 24px; color: #e8e4d8;"></span><br>
-        <span style="font-size: 19px; color: var(--green);">read last night's page →</span>
+        <span class="pixel" style="font-size: 10px; color: #FFC24A;">THE DAILY CHRONICLE</span><br>
+        <span id="chronTitle" style="font-family: var(--display); font-weight: 800; font-size: 22px; color: #FBF6EA;"></span><br>
+        <span style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: #FF6F5E; text-transform: uppercase;">read last night's page →</span>
       </span>
     </a>
     <script>
@@ -107,7 +204,7 @@
     </script>
   </div>
 
-  <div class="ticker-band" id="tickerBand" style="display: none; margin: 0 -32px;">
+  <div class="ticker-band" id="tickerBand" style="display: none; margin: 44px -40px 0;">
     <div class="ticker-run" id="tickerRun"></div>
   </div>
 </section>
@@ -117,40 +214,49 @@
   <div class="max grid-cutaway">
     <div class="cutaway">
       <div class="skyline">
-        <div style="width: 44px; height: 46px; background: #191930;"></div>
-        <div style="width: 58px; height: 64px; background: #14142a;"></div>
-        <div style="position: relative; width: 96px; height: 78px; background: #1e1e3a; display: flex; justify-content: center;">
+        <div style="width: 44px; height: 46px; background: #150E24;"></div>
+        <div style="width: 58px; height: 64px; background: #1E1430;"></div>
+        <div style="position: relative; width: 96px; height: 78px; background: #241B33; display: flex; justify-content: center;">
           <div class="sky-sign">THE QUARTER</div>
         </div>
-        <div style="width: 50px; height: 54px; background: #191930;"></div>
-        <div style="width: 38px; height: 40px; background: #14142a;"></div>
-        <div style="flex: 1; height: 30px; background: #10101f;"></div>
-        <svg width="40" height="40" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" style="position: absolute; top: 12px; right: 20px;"><rect x="6" y="1" width="3" height="3" fill="#c9c9e8"/><rect x="5" y="2" width="1" height="1" fill="#c9c9e8"/></svg>
+        <div style="width: 50px; height: 54px; background: #150E24;"></div>
+        <div style="width: 38px; height: 40px; background: #1E1430;"></div>
+        <div style="flex: 1; height: 30px; background: #0F0A1A;"></div>
+        <svg width="40" height="40" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true" style="position: absolute; top: 12px; right: 20px;">
+          <rect x="6" y="1" width="3" height="3" fill="#FFC24A" opacity="0.5"/>
+          <rect x="5" y="2" width="1" height="1" fill="#FFC24A" opacity="0.5"/>
+        </svg>
       </div>
       <div id="cutawayRows"></div>
       <div class="unlit-tail">▓▓▓▓▓▓▓▓▓▓▓▓<br><span id="unlitCount">the rest, unlit</span><br>▓▓▓▓▓▓▓▓▓▓▓▓</div>
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 8px;">
-      <div class="kicker pink">THE FLAGSHIP GAME</div>
-      <h2 class="px" style="margin: 0 0 18px;">A WORLD THAT NEVER RESETS</h2>
-      <p class="lede" style="margin-bottom: 30px;">Most arcade games forget you the moment you
-      walk away. We're building one that never forgets anything. One shared world — towns,
-      fields, and the dark places under them — that the whole room plays through
-      <em style="color: var(--green); font-style: normal;">together</em>, twenty-five chapters
-      a season. When a chapter is written, it's written for everyone, forever.</p>
+      <div class="kicker pink" style="margin-bottom: 14px;">◆ The Flagship Game</div>
+      <h2 class="px" style="margin: 0 0 22px;">A world that <em>never resets.</em></h2>
+      <p class="lede" style="margin-bottom: 20px;">
+        Most arcade games forget you the moment you walk away. We're building
+        one that never forgets anything. One shared world — towns, fields,
+        and the dark places under them — that the whole room plays through
+        <em>together</em>, twenty-five chapters a season. When a chapter is
+        written, it's written for everyone, forever.
+      </p>
       <div class="grid-features">
-        <div class="feature"><div class="fh">① ONE RUN A DAY</div><div>One free run per person. That's the whole price — and everyone is watching.</div></div>
-        <div class="feature"><div class="fh">② A SHARED STORY</div><div>Every run moves the chapter meter. The number on the wall is the town's number.</div></div>
-        <div class="feature"><div class="fh">③ THE LEDGER</div><div>Every deed recorded by name, forever. Glory and comedic death alike.</div></div>
-        <div class="feature"><div class="fh">④ SEASONS</div><div>Every few months the world ends — climactically — and reforges. Glory carries forward.</div></div>
+        <div class="feature"><div class="fh">① One Run a Day</div><div>One free run per person. That's the whole price — and everyone is watching.</div></div>
+        <div class="feature"><div class="fh">② A Shared Story</div><div>Every run moves the chapter meter. The number on the wall is the town's number.</div></div>
+        <div class="feature"><div class="fh">③ The Ledger</div><div>Every deed recorded by name, forever. Glory and comedic death alike.</div></div>
+        <div class="feature"><div class="fh">④ Seasons</div><div>Every few months the world ends — climactically — and reforges. Glory carries forward.</div></div>
       </div>
-      <div class="tone-box" style="margin-top: 30px;">
-        <svg width="52" height="52" viewBox="0 0 12 14" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="6" height="1" fill="#e8e8f4"/><rect x="2" y="1" width="8" height="4" fill="#e8e8f4"/><rect x="3" y="5" width="6" height="1" fill="#e8e8f4"/><rect x="3" y="2" width="2" height="2" fill="#07070f"/><rect x="7" y="2" width="2" height="2" fill="#07070f"/><rect x="5" y="4" width="2" height="1" fill="#07070f"/><rect x="4" y="6" width="4" height="1" fill="#e8e8f4"/><rect x="2" y="7" width="8" height="1" fill="#e8e8f4"/><rect x="1" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="9" y="8" width="2" height="3" fill="#e8e8f4"/><rect x="4" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="7" y="8" width="1" height="4" fill="#e8e8f4"/><rect x="5" y="9" width="2" height="1" fill="#e8e8f4"/><rect x="3" y="12" width="2" height="1" fill="#e8e8f4"/><rect x="7" y="12" width="2" height="1" fill="#e8e8f4"/></svg>
-        <div>The tone, for the record: <b>the stakes are real, the world is ridiculous.</b>
-        Real heroism, talking skeletons, comedic deaths, a narrator who is not impressed with you.</div>
+      <div class="tone-box" style="margin-top: 32px; display: flex; align-items: center; gap: 18px;">
+        <svg width="72" height="72"><use href="#mascot-fox-cream"/></svg>
+        <div>
+          <b>The stakes are real, the world is ridiculous.</b>
+          Real heroism, talking skeletons, comedic deaths, and a world that keeps its own record of every one.
+        </div>
       </div>
-      <div style="margin-top: 22px; font-size: 21px;"><a href="/game/">how the game works →</a></div>
+      <div style="margin-top: 22px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">
+        <a href="/game/" style="color: #FF6F5E;">how the game works →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -159,12 +265,14 @@
 <section class="section band">
   <div class="max grid-visit">
     <div>
-      <div class="kicker cyan">THE REAL PLACE</div>
-      <h2 class="px" style="margin: 8px 0 18px;">DOORS OPEN 2027</h2>
-      <p class="lede" style="margin-bottom: 26px; max-width: 560px;">The Quarter is a real
-      arcade — cabinets, pinball, a floor full of the machines you remember. There is no
-      building yet: we're starting from an empty lot, town approvals and foundation and
-      framing and all. The location gets announced the day the paperwork clears.</p>
+      <div class="kicker cyan" style="margin-bottom: 14px;">◆ The Real Place</div>
+      <h2 class="px" style="margin: 0 0 22px;">Doors Open 2027</h2>
+      <p class="lede" style="margin-bottom: 26px; max-width: 560px;">
+        The Quarter is a real arcade — cabinets, pinball, a floor full of
+        the machines you remember. There is no building yet: we're starting
+        from an empty lot, town approvals and foundation and framing and all.
+        The location gets announced the day the paperwork clears.
+      </p>
       <div style="display: flex; gap: 14px; flex-wrap: wrap;">
         <span class="chip">☑ fun proven first</span>
         <span class="chip">☐ town approvals</span>
@@ -172,19 +280,29 @@
         <span class="chip">☐ framing</span>
         <span class="chip star">★ doors, 2027</span>
       </div>
-      <div style="margin-top: 22px; font-size: 21px;"><a href="/visit/">about visiting →</a></div>
+      <div style="margin-top: 22px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">
+        <a href="/visit/" style="color: #FF6F5E;">about visiting →</a>
+      </div>
     </div>
     <div style="display: flex; justify-content: center;">
       <svg width="240" height="330" viewBox="0 0 16 22" shape-rendering="crispEdges" aria-label="pixel arcade cabinet">
-        <rect x="2" y="0" width="12" height="3" fill="#ff3d9e"/><rect x="3" y="1" width="10" height="1" fill="#ffb300"/>
-        <rect x="2" y="3" width="12" height="1" fill="#2a1a3e"/><rect x="2" y="4" width="12" height="7" fill="#1e1e3a"/>
-        <rect x="3" y="5" width="10" height="5" fill="#07070f"/><rect x="5" y="6" width="2" height="1" fill="#3dff7a"/>
-        <rect x="9" y="7" width="2" height="1" fill="#3dff7a"/><rect x="6" y="8" width="4" height="1" fill="#ffb300"/>
-        <rect x="2" y="11" width="13" height="3" fill="#2a1a3e"/><rect x="4" y="12" width="1" height="1" fill="#ff3d3d"/>
-        <rect x="7" y="12" width="1" height="1" fill="#29d9ff"/><rect x="9" y="12" width="1" height="1" fill="#ffb300"/>
-        <rect x="2" y="14" width="12" height="7" fill="#1e1e3a"/><rect x="3" y="15" width="10" height="5" fill="#14142a"/>
-        <rect x="6" y="16" width="4" height="2" fill="#ffb300"/><rect x="7" y="16" width="2" height="1" fill="#8a5a00"/>
-        <rect x="1" y="21" width="14" height="1" fill="#0d0d1f"/>
+        <rect x="2" y="0" width="12" height="3" fill="#FF6F5E"/>
+        <rect x="3" y="1" width="10" height="1" fill="#FFC24A"/>
+        <rect x="2" y="3" width="12" height="1" fill="#1E1430"/>
+        <rect x="2" y="4" width="12" height="7" fill="#241B33"/>
+        <rect x="3" y="5" width="10" height="5" fill="#150E24"/>
+        <rect x="5" y="6" width="2" height="1" fill="#2FBDAC"/>
+        <rect x="9" y="7" width="2" height="1" fill="#2FBDAC"/>
+        <rect x="6" y="8" width="4" height="1" fill="#FFC24A"/>
+        <rect x="2" y="11" width="12" height="3" fill="#1E1430"/>
+        <rect x="4" y="12" width="1" height="1" fill="#FF6F5E"/>
+        <rect x="7" y="12" width="1" height="1" fill="#2FBDAC"/>
+        <rect x="9" y="12" width="1" height="1" fill="#FFC24A"/>
+        <rect x="2" y="14" width="12" height="7" fill="#241B33"/>
+        <rect x="3" y="15" width="10" height="5" fill="#150E24"/>
+        <rect x="6" y="16" width="4" height="2" fill="#FFC24A"/>
+        <rect x="7" y="16" width="2" height="1" fill="#B33F2F"/>
+        <rect x="1" y="21" width="14" height="1" fill="#0F0A1A"/>
       </svg>
     </div>
   </div>
@@ -194,27 +312,29 @@
 <section class="section">
   <div class="max">
     <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 12px;">
-      <h2 class="pixel" style="font-size: 22px; color: #f2f2ff; margin: 0;">LATEST FROM THE DEVLOG</h2>
-      <a href="/devlog/" style="font-size: 21px;">all entries →</a>
+      <h2 class="pixel" style="font-family: var(--pixel); font-size: 18px; color: #FBF6EA; margin: 0; letter-spacing: 0.06em;">LATEST FROM THE DEVLOG</h2>
+      <a href="/devlog/" style="font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6F5E;">all entries →</a>
     </div>
     <a class="entry-card" href="/devlog/insert-coin.html">
-      <div class="pixel" style="font-size: 12px; color: var(--amber); line-height: 1.8;">DEVLOG<br>01<br><span style="color: var(--dim);">JUL 2026</span></div>
       <div>
-        <div class="pixel" style="font-size: 16px; color: var(--green); margin-bottom: 12px;">INSERT COIN</div>
-        <div style="font-size: 23px; line-height: 1.4; color: var(--body);">An arcade with no
-        building yet, a game that can only exist inside it, and week one: proving the fun
-        before anything else.</div>
+        <div class="pixel" style="font-size: 10px; color: #FFC24A; line-height: 1.8; letter-spacing: 0.06em;">DEVLOG<br>01<br><span style="color: rgba(251,246,234,0.45);">JUL 2026</span></div>
+      </div>
+      <div>
+        <div class="pixel" style="font-size: 12px; color: #FF6F5E; margin-bottom: 12px; letter-spacing: 0.06em;">INSERT COIN</div>
+        <div style="font-family: var(--text); font-size: 22px; line-height: 1.45; color: #C7BEDD;">
+          An arcade with no building yet, a game that can only exist inside it, and week one: proving the fun before anything else.
+        </div>
       </div>
     </a>
   </div>
 </section>
 
 <footer class="site">
-  <span>THE QUARTER · a small town in New England · opening 2027</span>
+  <span>The Quarter · a small town in New England · opening 2027</span>
   <span class="sep">|</span>
   <span><a href="/game/">game</a> · <a href="/world/">world</a> · <a href="/devlog/">devlog</a> · <a href="/visit/">visit</a></span>
   <span class="sep">|</span>
-  <span class="game-over">GAME OVER? NEVER.</span>
+  <span class="game-over">Game Over? Never.</span>
 </footer>
 
 <script>
@@ -225,18 +345,18 @@
     const pad = String(ch).padStart(2, '0');
     document.getElementById('worldTag').textContent = 'development world · season ' + s.season;
     document.getElementById('lvNum').textContent = 'CH ' + pad;
-    document.getElementById('meterLabel').textContent = 'CHAPTER ' + pad + ' METER';
-    document.getElementById('meterPct').textContent = pct.toFixed(1) + '% — every run moves it';
+    document.getElementById('meterLabel').textContent = 'Chapter ' + pad + ' Meter';
+    document.getElementById('meterPct').textContent = pct.toFixed(1) + '% · every run moves it';
     document.getElementById('statRuns').textContent = s.total_runs.toLocaleString();
     document.getElementById('statKills').textContent = s.total_kills.toLocaleString();
     document.getElementById('statFallen').textContent = ch - 1;
 
-    // Segmented meter (24 cells).
+    // Segmented meter — 24 cells.
     const segs = document.getElementById('segs');
     const filled = Math.round((Math.min(pct, 100) / 100) * 24);
     for (let i = 0; i < 24; i++) {
       const d = document.createElement('div');
-      d.className = 'seg' + (i < filled ? (i === filled - 1 ? ' on edge' : ' on') : '');
+      d.className = 'seg' + (i < filled ? (i === filled - 1 ? ' edge' : ' on') : '');
       segs.appendChild(d);
     }
 
