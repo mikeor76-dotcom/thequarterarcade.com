@@ -5,48 +5,29 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Martian+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
-<style>
-.wrap { max-width: 860px; margin: 0 auto; padding: 88px 40px; }
-h1.pixel-h {
-  font-family: 'Press Start 2P', monospace; font-size: 18px;
-  color: #FFC24A; letter-spacing: 0.06em; margin-bottom: 22px;
-  text-shadow: 0 0 12px rgba(255,194,74,0.35);
-}
-.chronicle-card {
-  display: block; background: var(--plum, #1E1430);
-  border: 1px solid rgba(251,246,234,0.10);
-  padding: 24px 26px; margin: 18px 0; text-decoration: none;
-  transition: border-color .18s;
-}
-.chronicle-card:hover { border-color: #FF6F5E; }
-</style></head><body>
-<div class="scanlines"></div>
-<div class="vignette"></div>
+<style>.wrap{max-width:860px;margin:0 auto;padding:24px}
+h1{font-family:'Press Start 2P';font-size:20px;color:var(--amber)}
+.entry-card{display:block;border:2px solid #2a2440;padding:18px;margin:14px 0;text-decoration:none}
+.entry-card:hover{border-color:var(--amber)}</style></head><body>
 <nav class="nav">
-  <a class="brand" href="/">
-    <img src="/logo/quarter-mark-cream.svg" width="42" height="42" alt="">
-    <span class="wordmark">THE QUARTER</span>
-  </a>
-  <div class="links">
+  <a class="brand" href="/">THE QUARTER</a>
+  <span>
     <a href="/game/">The Game</a>
-    <a href="/world/" class="here">The World</a>
+    <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
-    <span class="insert-coin">Insert Coin</span>
-  </div>
+  </span>
 </nav>
 <div class="wrap">
-  <h1 class="pixel-h">THE SEASON'S BOOK</h1>
-  <p class="lede" style="max-width: 640px; margin-bottom: 28px;">
-    One page for every day the Bury stirred — as told by the Chronicler,
-    at the hearth, to anyone who'll sit.
-  </p>
-
-  <a class="chronicle-card" href="/world/chronicle/2026-07-23/">
-    <div style="font-family: 'Press Start 2P', monospace; font-size: 12px; color: #FFC24A; letter-spacing: 0.06em; line-height: 1.7;">One Man, Thirty-Six Doors</div>
-    <div style="font-family: 'Martian Mono', monospace; font-size: 12px; color: #2FBDAC; margin-top: 8px; letter-spacing: 0.14em; text-transform: uppercase;">2026-07-23</div>
+  <h1>THE SEASON'S BOOK</h1>
+  <p style="font-size:23px;color:#cfc7b2">One page for every day the Bury
+  stirred — as told by the Chronicler, at the hearth, to anyone who'll sit.</p>
+  
+  <a class="entry-card" href="/world/chronicle/2026-07-23/">
+    <div style="font-family:'Press Start 2P';font-size:13px;color:var(--amber);line-height:1.7">One Man, Thirty-Six Doors</div>
+    <div style="font-size:20px;color:var(--green);margin-top:6px">2026-07-23</div>
   </a>
 </div>
 </body></html>

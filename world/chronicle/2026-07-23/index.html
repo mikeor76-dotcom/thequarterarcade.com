@@ -5,57 +5,33 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Martian+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <style>
-.article { max-width: 760px; margin: 0 auto; padding: 64px 40px; }
-.article h1 {
-  font-family: 'Press Start 2P', monospace; font-size: 20px;
-  line-height: 1.6; color: #FFC24A; letter-spacing: 0.04em;
-  text-shadow: 0 0 12px rgba(255,194,74,0.35);
-}
-.dateline {
-  color: #2FBDAC; font-family: 'Martian Mono', monospace;
-  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
-  margin: 12px 0 30px;
-}
-.beat { margin: 34px 0; }
-.beat img { max-width: 100%; max-height: 340px; display: block;
-  margin: 0 auto 14px; border: 1px solid rgba(251,246,234,0.10); }
-.beat p { font-family: 'Newsreader', Georgia, serif;
-  font-size: 22px; line-height: 1.5; color: #C7BEDD; }
-.hearth { display: inline-block; margin: 10px 0 30px; }
-#show { position: fixed; inset: 0; background: #150E24; display: none; z-index: 50;
-  align-items: center; justify-content: center; flex-direction: column; text-align: center; }
-#show.on { display: flex; }
-#show img { max-width: min(80vw, 900px); max-height: 60vh;
-  animation: kb 9s ease-in-out infinite alternate;
-  border: 1px solid rgba(251,246,234,0.10); }
-#show p { font-family: 'Newsreader', Georgia, serif; font-size: 24px;
-  color: #FBF6EA; max-width: 760px; padding: 0 24px; line-height: 1.5; }
-#show .hint { position: absolute; bottom: 18px; font-family: 'Martian Mono', monospace;
-  font-size: 11px; letter-spacing: 0.18em; color: #8A82A5; text-transform: uppercase; }
-@keyframes kb { from { transform: scale(1) } to { transform: scale(1.07) translateY(-8px) } }
-.backlink {
-  font-family: 'Martian Mono', monospace; font-size: 11px;
-  letter-spacing: 0.14em; text-transform: uppercase;
-}
-.backlink a { color: #FF6F5E; }
+.article{max-width:760px;margin:0 auto;padding:24px}
+.article h1{font-family:'Press Start 2P';font-size:22px;line-height:1.6;color:var(--amber)}
+.dateline{color:var(--green);font-size:22px;margin:8px 0 26px}
+.beat{margin:34px 0}
+.beat img{max-width:100%;max-height:340px;display:block;margin:0 auto 14px;image-rendering:auto}
+.beat p{font-size:26px;line-height:1.5;color:#e8e4d8}
+.hearth{display:inline-block;margin:10px 0 30px}
+#show{position:fixed;inset:0;background:#050409;display:none;z-index:50;
+  align-items:center;justify-content:center;flex-direction:column;text-align:center}
+#show.on{display:flex}
+#show img{max-width:min(80vw,900px);max-height:60vh;animation:kb 9s ease-in-out infinite alternate}
+#show p{font-size:27px;color:#e8e4d8;max-width:760px;padding:0 24px;line-height:1.5}
+#show .hint{position:absolute;bottom:18px;font-size:18px;color:#777}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07) translateY(-8px)}}
+.backlink{font-size:20px}
 </style></head><body>
-<div class="scanlines"></div>
-<div class="vignette"></div>
 <nav class="nav">
-  <a class="brand" href="/">
-    <img src="/logo/quarter-mark-cream.svg" width="42" height="42" alt="">
-    <span class="wordmark">THE QUARTER</span>
-  </a>
-  <div class="links">
+  <a class="brand" href="/">THE QUARTER</a>
+  <span>
     <a href="/game/">The Game</a>
-    <a href="/world/" class="here">The World</a>
+    <a href="/world/">The World</a>
     <a href="/devlog/">Devlog</a>
     <a href="/visit/">Visit</a>
-    <span class="insert-coin">Insert Coin</span>
-  </div>
+  </span>
 </nav>
 <div class="article">
   <div class="backlink"><a href="/world/chronicle/">« the season's book</a></div>
