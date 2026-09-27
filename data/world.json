@@ -1,21 +1,100 @@
 {
-	"generated_at": "2026-08-15T08:48:52",
+	"generated_at": "2026-09-27T15:51:34",
 	"notables": [
 		{
 			"actor": {
 				"player": "MIKE"
 			},
 			"data": {
+				"chapter": 1,
+				"meter": 58.5
+			},
+			"day": 47,
+			"id": "evt_1790538694_9729",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "Chapter 1 is half written.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "chapter.milestone",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
 				"boss_hp_pct": -1,
-				"contribution": 27.4,
+				"contribution": 12.7,
 				"crew_size": 1,
-				"deaths": 6,
-				"kills": 154,
+				"deaths": 0,
+				"kills": 7,
+				"level_time": 130.315856111107,
+				"meter_after": 58.5,
+				"persistent_outcomes": [],
+				"victory": true
+			},
+			"day": 47,
+			"id": "evt_1790538694_8022",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1790538692_victory.png",
+						"tag": "victory"
+					}
+				],
+				"shot": "shot_1790538693.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company completed an expedition in Chapter 1. The meter surges to 58%.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "run.completed",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "THE CHRONICLER"
+			},
+			"data": {
+				"day": 4,
+				"meter_gain": 27.4,
+				"runs": 1
+			},
+			"day": 47,
+			"id": "evt_1790538694_4819",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "the-quarter",
+			"text": "Day 4 closed with 1 companies underground; the meter rose 27 points.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "day.closed",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1.0,
+				"contribution": 27.4,
+				"crew_size": 1.0,
+				"deaths": 6.0,
+				"kills": 154.0,
 				"level_time": 168.762359000009,
 				"meter_after": 45.8,
 				"victory": true
 			},
-			"day": 4,
+			"day": 4.0,
 			"id": "evt_1786798132_9535",
 			"media": {
 				"moments": [
@@ -35,13 +114,13 @@
 				"shot": "shot_1786798131.png"
 			},
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 45%.",
 			"ts": "2026-08-15T08:48:52",
 			"type": "run.completed",
-			"unix": 1786798132,
-			"v": 1,
+			"unix": 1786798132.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -49,21 +128,21 @@
 				"player": "THE CHRONICLER"
 			},
 			"data": {
-				"day": 1,
+				"day": 1.0,
 				"meter_gain": 18.4,
-				"runs": 1
+				"runs": 1.0
 			},
-			"day": 4,
+			"day": 4.0,
 			"id": "evt_1786798132_2215",
 			"media": null,
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "the-quarter",
 			"text": "Day 1 closed with 1 companies underground; the meter rose 18 points.",
 			"ts": "2026-08-15T08:48:52",
 			"type": "day.closed",
-			"unix": 1786798132,
-			"v": 1,
+			"unix": 1786798132.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -137,16 +216,95 @@
 				"player": "MIKE"
 			},
 			"data": {
+				"chapter": 1,
+				"meter": 58.5
+			},
+			"day": 47,
+			"id": "evt_1790538694_9729",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "Chapter 1 is half written.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "chapter.milestone",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
 				"boss_hp_pct": -1,
-				"contribution": 27.4,
+				"contribution": 12.7,
 				"crew_size": 1,
-				"deaths": 6,
-				"kills": 154,
+				"deaths": 0,
+				"kills": 7,
+				"level_time": 130.315856111107,
+				"meter_after": 58.5,
+				"persistent_outcomes": [],
+				"victory": true
+			},
+			"day": 47,
+			"id": "evt_1790538694_8022",
+			"media": {
+				"moments": [
+					{
+						"file": "moment_1790538692_victory.png",
+						"tag": "victory"
+					}
+				],
+				"shot": "shot_1790538693.png"
+			},
+			"prominence": "notable",
+			"season": 1,
+			"site": "chapter-01",
+			"text": "MIKE's company completed an expedition in Chapter 1. The meter surges to 58%.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "run.completed",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "THE CHRONICLER"
+			},
+			"data": {
+				"day": 4,
+				"meter_gain": 27.4,
+				"runs": 1
+			},
+			"day": 47,
+			"id": "evt_1790538694_4819",
+			"media": null,
+			"prominence": "notable",
+			"season": 1,
+			"site": "the-quarter",
+			"text": "Day 4 closed with 1 companies underground; the meter rose 27 points.",
+			"ts": "2026-09-27T15:51:34",
+			"type": "day.closed",
+			"unix": 1790538694,
+			"v": 1,
+			"vod": null
+		},
+		{
+			"actor": {
+				"player": "MIKE"
+			},
+			"data": {
+				"boss_hp_pct": -1.0,
+				"contribution": 27.4,
+				"crew_size": 1.0,
+				"deaths": 6.0,
+				"kills": 154.0,
 				"level_time": 168.762359000009,
 				"meter_after": 45.8,
 				"victory": true
 			},
-			"day": 4,
+			"day": 4.0,
 			"id": "evt_1786798132_9535",
 			"media": {
 				"moments": [
@@ -166,13 +324,13 @@
 				"shot": "shot_1786798131.png"
 			},
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "chapter-01",
 			"text": "MIKE's company put the Bone Marshal down in Chapter 1. The meter surges to 45%.",
 			"ts": "2026-08-15T08:48:52",
 			"type": "run.completed",
-			"unix": 1786798132,
-			"v": 1,
+			"unix": 1786798132.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -180,21 +338,21 @@
 				"player": "THE CHRONICLER"
 			},
 			"data": {
-				"day": 1,
+				"day": 1.0,
 				"meter_gain": 18.4,
-				"runs": 1
+				"runs": 1.0
 			},
-			"day": 4,
+			"day": 4.0,
 			"id": "evt_1786798132_2215",
 			"media": null,
 			"prominence": "notable",
-			"season": 1,
+			"season": 1.0,
 			"site": "the-quarter",
 			"text": "Day 1 closed with 1 companies underground; the meter rose 18 points.",
 			"ts": "2026-08-15T08:48:52",
 			"type": "day.closed",
-			"unix": 1786798132,
-			"v": 1,
+			"unix": 1786798132.0,
+			"v": 1.0,
 			"vod": null
 		},
 		{
@@ -264,13 +422,13 @@
 	],
 	"state": {
 		"chapter": 1.0,
-		"day_meter_gain": 27.4,
+		"day_meter_gain": 12.7,
 		"day_runs": 1,
-		"last_day": 4,
-		"meter": 45.8,
+		"last_day": 47,
+		"meter": 58.5,
 		"season": 1.0,
 		"season_start_unix": 1786483329.0,
-		"total_kills": 218,
-		"total_runs": 2
+		"total_kills": 225,
+		"total_runs": 3
 	}
 }
